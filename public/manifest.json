@@ -1,10 +1,11 @@
 {
-	"name": "make-ams",
+	"name": "메이크 출입관리",
 	"short_name": "make-ams",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#ffffff",
 	"theme_color": "#485EEE",
+	"orientation": "portrait",
 	"icons": [
 		{
 			"src": "icons/maskable_icon_x48.png",
