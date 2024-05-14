@@ -3,6 +3,8 @@ import { Textbox } from "../components/textbox";
 import { login } from "../services/auth";
 
 const Login = () => {
+	if (localStorage.getItem("code")) document.location.href = "/";
+
 	const [id, setId] = useState("");
 	const [password, setPassword] = useState("");
 
