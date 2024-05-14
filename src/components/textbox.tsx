@@ -1,4 +1,4 @@
-export interface TextboxProps {
+interface TextboxProps {
 	inputBoxType: string;
 	inputBoxHint: string;
 	value: string;
