@@ -2,6 +2,8 @@ import QRCode from "react-qr-code";
 import { HomeButton } from "../components/homebutton";
 
 const Home = () => {
+	if (!localStorage.getItem("code")) document.location.href = "/login";
+
 	return (
 		<div className="Page1 w-[430px] h-[932px] relative bg-white">
 			<div className=" left-[10px] top-[40px] absolute text-center text-black text-[26px] font-bold font-['Pretendard']">
