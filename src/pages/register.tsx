@@ -18,7 +18,7 @@ const Register = () => {
 			<div className="grid grid-rows-3 h-4/6 gap-10">
 				<div className="grid grid-rows-4 gap-10 h-full row-span-2">
 					<Textbox
-						inputBoxHint="아이P디"
+						inputBoxHint="아이디"
 						inputBoxType="text"
 						value={id}
 						changeValue={setId}
