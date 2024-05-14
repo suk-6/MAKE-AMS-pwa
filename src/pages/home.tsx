@@ -1,3 +1,5 @@
+import { HomeButton } from "../components/homebutton";
+
 const Home = () => {
 	return (
 		<div className="Page1 w-[430px] h-[932px] relative bg-white">
@@ -5,17 +7,9 @@ const Home = () => {
 				메이커스페이스 출입관리
 			</div>
 			<div className="Line1 w-[406px] h-[0px] left-[10px] top-[82px] absolute border border-black"></div>
-			<div className=" w-[195px] h-[93px] left-[218px] top-[93px] absolute">
-				<div className="Rectangle1 w-[195px] h-[93px] left-0 top-0 absolute bg-green-400 rounded-[20px]" />
-				<div className=" w-[39px] h-[39px] left-[78px] top-[27px] absolute text-center text-black text-[22px] font-semibold font-['Pretendard']">
-					열기
-				</div>
-			</div>
-			<div className=" w-[195px] h-[93px] left-[218px] top-[195px] absolute">
-				<div className="Rectangle1 w-[195px] h-[93px] left-0 top-0 absolute bg-red-400 rounded-[20px]" />
-				<div className=" left-[68px] top-[33px] absolute text-center text-black text-[22px] font-semibold font-['Pretendard']">
-					초기화
-				</div>
+			<div className=" pt-24">
+				<HomeButton text="열기" color="green" />
+				<HomeButton text="초기화" color="red" />
 			</div>
 			<div className="Group1 w-[195px] h-[195px] left-[13px] top-[93px] absolute">
 				<div className="Rectangle2 w-[195px] h-[195px] left-0 top-0 absolute" />
