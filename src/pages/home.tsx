@@ -10,7 +10,7 @@ const Home = () => {
 				메이커스페이스 출입관리
 			</div>
 			<div className="w-[95%] my-[1%] border-[1px] border-black ml-2"></div>
-			<div className=" pt-6 grid grid-cols-2 gap-2 w-full">
+			<div className=" pt-3 grid grid-cols-2 gap-2 w-full">
 				<div className="Group1 w-[195px] h-[195px] ml-2 flex items-center justify-center">
 					<QRCode
 						value={localStorage.getItem("code") || ""}
