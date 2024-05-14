@@ -1,4 +1,4 @@
-export interface ButtonProps {
+interface ButtonProps {
 	text: string;
 	color: string;
 	func: () => void;
