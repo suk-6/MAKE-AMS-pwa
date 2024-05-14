@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Textbox } from "../components/textbox";
 
 const Login = () => {
+	const [id, setId] = useState("");
+	const [password, setPassword] = useState("");
+
 	return (
 		<div className="Page2 w-auto h-[932px] relative bg-white">
 			<div className=" w-[254px] h-[31px] left-[13px] top-[40px] absolute text-black text-[26px] font-bold font-['Pretendard']">
@@ -14,8 +18,18 @@ const Login = () => {
 				</div>
 			</div>
 			<div className="">
-				<Textbox inputBoxHint="아이디" inputBoxType="text" />
-				<Textbox inputBoxHint="비밀번호" inputBoxType="password" />
+				<Textbox
+					inputBoxHint="아이디"
+					inputBoxType="text"
+					value={id}
+					changeValue={setId}
+				/>
+				<Textbox
+					inputBoxHint="비밀번호"
+					inputBoxType="password"
+					value={password}
+					changeValue={setPassword}
+				/>
 			</div>
 		</div>
 	);
