@@ -5,22 +5,22 @@ const Home = () => {
 	if (!localStorage.getItem("code")) document.location.href = "/login";
 
 	return (
-		<div className="Page1 w-[430px] h-[932px] relative bg-white">
-			<div className=" left-[10px] top-[40px] absolute text-center text-black text-[26px] font-bold font-['Pretendard']">
+		<div className="Page1 w-full h-full bg-white">
+			<div className=" ml-2 mt-9 text-black text-[26px] font-bold font-['Pretendard']">
 				메이커스페이스 출입관리
 			</div>
-			<div className="Line1 w-[406px] h-[0px] left-[10px] top-[82px] absolute border border-black"></div>
-			<div className=" pt-24">
-				<HomeButton text="열기" color="green" />
-				<HomeButton text="초기화" color="red" />
-			</div>
-			<div className="Group1 w-[195px] h-[195px] left-[13px] top-[93px] absolute">
-				<div className="Rectangle2 w-[195px] h-[195px] left-0 top-0 absolute" />
-				<QRCode
-					className="Rectangle3 w-[173px] h-[173px] left-[11px] top-[11px] absolute"
-					value={localStorage.getItem("code") || ""}
-					size={150}
-				/>
+			<div className="w-[95%] my-[1%] border-[1px] border-black ml-2"></div>
+			<div className=" pt-6 grid grid-cols-2 gap-2 w-full">
+				<div className="Group1 w-[195px] h-[195px] ml-2 flex items-center justify-center">
+					<QRCode
+						value={localStorage.getItem("code") || ""}
+						size={173}
+					/>
+				</div>
+				<div className="Group1 w-[195px] h-[195px] mr-2">
+					<HomeButton text="열기" color="green" />
+					<HomeButton text="로그아웃" color="red" />
+				</div>
 			</div>
 		</div>
 	);
