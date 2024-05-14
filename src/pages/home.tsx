@@ -1,3 +1,4 @@
+import QRCode from "react-qr-code";
 import { HomeButton } from "../components/homebutton";
 
 const Home = () => {
@@ -13,9 +14,14 @@ const Home = () => {
 			</div>
 			<div className="Group1 w-[195px] h-[195px] left-[13px] top-[93px] absolute">
 				<div className="Rectangle2 w-[195px] h-[195px] left-0 top-0 absolute" />
-				<img
+				{/* <img
 					className="Rectangle3 w-[173px] h-[173px] left-[11px] top-[11px] absolute"
-					src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example"
+					src={getQRURL()}
+				/> */}
+				<QRCode
+					className="Rectangle3 w-[173px] h-[173px] left-[11px] top-[11px] absolute"
+					value={localStorage.getItem("code") || ""}
+					size={150}
 				/>
 			</div>
 		</div>

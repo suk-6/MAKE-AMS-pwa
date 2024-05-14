@@ -6,6 +6,7 @@ const Register = () => {
 	const [id, setId] = useState("");
 	const [password, setPassword] = useState("");
 	const [studentId, setStudentId] = useState("");
+	const [name, setName] = useState("");
 
 	return (
 		<div className="Page2 w-auto h-[932px] relative bg-white">
@@ -32,10 +33,16 @@ const Register = () => {
 					value={studentId}
 					changeValue={setStudentId}
 				/>
+				<Textbox
+					inputBoxHint="이름"
+					inputBoxType="text"
+					value={name}
+					changeValue={setName}
+				/>
 			</div>
 			<div
-				className=" w-[230px] h-[50px] left-[100px] top-[500px] absolute flex justify-center items-center"
-				onClick={() => register(id, password, studentId)}
+				className=" w-[230px] h-[50px] left-[100px] top-[580px] absolute flex justify-center items-center"
+				onClick={() => register(id, password, studentId, name)}
 			>
 				<div className="Rectangle6 w-[230px] h-[50px] left-0 top-0 absolute bg-gray-200 rounded-[20px] border border-black" />
 				<div className=" relative text-center text-black text-[22px] font-semibold font-['Pretendard']">
