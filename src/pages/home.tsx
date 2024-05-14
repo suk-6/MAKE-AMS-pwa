@@ -14,10 +14,6 @@ const Home = () => {
 			</div>
 			<div className="Group1 w-[195px] h-[195px] left-[13px] top-[93px] absolute">
 				<div className="Rectangle2 w-[195px] h-[195px] left-0 top-0 absolute" />
-				{/* <img
-					className="Rectangle3 w-[173px] h-[173px] left-[11px] top-[11px] absolute"
-					src={getQRURL()}
-				/> */}
 				<QRCode
 					className="Rectangle3 w-[173px] h-[173px] left-[11px] top-[11px] absolute"
 					value={localStorage.getItem("code") || ""}
