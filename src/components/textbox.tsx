@@ -11,15 +11,17 @@ export const Textbox = ({
 	value,
 	changeValue,
 }: TextboxProps) => (
-	<div className=" h-[80px] left-[65px] top-[228px] w-[300px] relative">
-		<input
-			type={inputBoxType}
-			value={value}
-			onChange={(e) => changeValue(e.target.value)}
-			className="Rectangle4 w-[300px] h-[50px] left-0 top-[21px] absolute border border-black"
-		/>
-		<div className=" w-[57px] h-[19px] left-0 top-0 absolute text-left text-black text-base font-normal font-['Pretendard']">
-			{inputBoxHint}
+	<div className="flex justify-center items-center w-full h-auto">
+		<div className=" grid grid-rows-2 w-auto h-min">
+			<span className="h-min flex justify-start items-center text-black text-base font-normal font-['Pretendard']">
+				{inputBoxHint}
+			</span>
+			<input
+				type={inputBoxType}
+				value={value}
+				onChange={(e) => changeValue(e.target.value)}
+				className="border border-black h-8"
+			/>
 		</div>
 	</div>
 );
