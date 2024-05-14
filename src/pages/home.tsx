@@ -7,18 +7,21 @@ const Home = () => {
 
 	return (
 		<div className="Page1 w-full h-full bg-white">
-			<div className=" ml-2 mt-9 text-black text-[26px] font-bold font-['Pretendard']">
-				메이커스페이스 출입관리
+			<div className="w-full my-5 ml-3">
+				<div className="w-[95%] text-black text-2xl font-bold font-['Pretendard']">
+					메이커스페이스 출입관리
+				</div>
+				<div className="w-[95%] my-[1%] border-[1px] border-black"></div>
 			</div>
-			<div className="w-[95%] my-[1%] border-[1px] border-black ml-2"></div>
-			<div className=" pt-3 grid grid-cols-2 gap-2 w-full">
-				<div className="Group1 w-[195px] h-[195px] ml-2 flex items-center justify-center">
+			<div className=" pt-3 pl-1 grid grid-cols-2 gap-1 w-full">
+				<div className="w-[100%] h-[100%] flex items-center justify-center">
 					<QRCode
+						className="w-[90%] h-[90%]"
 						value={localStorage.getItem("code") || ""}
-						size={173}
+						size={256}
 					/>
 				</div>
-				<div className="Group1 w-[195px] h-[195px] mr-2">
+				<div className="w-[100%] h-[100%]">
 					<HomeButton text="열기" color="green" func={openDoor} />
 					<HomeButton
 						text="로그아웃"
