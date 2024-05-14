@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/home";
 import Login from "./pages/login";
 
-function App() {
+const App = () => {
 	return (
 		<>
 			<Home />
@@ -12,6 +12,6 @@ function App() {
 			<Analytics />
 		</>
 	);
-}
+};
 
 export default App;
