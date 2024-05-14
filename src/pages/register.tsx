@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Textbox } from "../components/textBox.tsx";
+import { Textbox } from "../components/textBox";
 import { register } from "../services/auth";
 import { TitleBar } from "../components/titleBar";
 import { AuthButton } from "../components/authButton";
