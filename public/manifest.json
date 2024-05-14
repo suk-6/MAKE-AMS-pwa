@@ -1,6 +1,6 @@
 {
 	"name": "메이크 출입관리",
-	"short_name": "make-ams",
+	"short_name": "메이크 출입관리",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#ffffff",
