@@ -5,8 +5,13 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
 const App = () => {
+	useEffect(() => {
+		document.body.style.cssText = `position: fixed; width: 100%; height: 100%; overflow: hidden;`;
+	});
+
 	return (
 		<>
 			<Routes>
