@@ -1,5 +1,5 @@
 import QRCode from "react-qr-code";
-import { HomeButton } from "../components/homeButton";
+import { HomeButton } from "./homeButton";
 import { openDoor } from "../services/auth";
 
 export const HomeFeature = () => {
