@@ -20,7 +20,14 @@ const Home = () => {
 				</div>
 				<div className="Group1 w-[195px] h-[195px] mr-2">
 					<HomeButton text="열기" color="green" func={openDoor} />
-					<HomeButton text="로그아웃" color="red" func={() => {}} />
+					<HomeButton
+						text="로그아웃"
+						color="red"
+						func={() => {
+							localStorage.removeItem("code");
+							location.reload();
+						}}
+					/>
 				</div>
 			</div>
 		</div>
