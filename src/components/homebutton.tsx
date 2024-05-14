@@ -6,18 +6,20 @@ export interface ButtonProps {
 
 export const HomeButton = ({ text, color, func }: ButtonProps) => {
 	let buttonClass =
-		"w-full h-full bg-green-400 text-center text-black text-xl font-semibold font-['Pretendard'] flex items-center justify-center";
+		"w-full h-full bg-green-400 text-black text-xl font-semibold font-['Pretendard'] flex items-center justify-center";
 	if (color === "green") {
 		buttonClass += " bg-green-400";
 	} else if (color === "red") {
 		buttonClass += " bg-red-400";
 	}
 	return (
-		<div
-			className=" w-[90%] h-[50%] mb-1 relative flex justify-center items-center rounded-[20px] overflow-hidden"
-			onClick={() => func()}
-		>
-			<div className={buttonClass}>{text}</div>
+		<div className="w-full h-full flex justify-center items-center">
+			<div
+				className=" w-11/12 h-full rounded-2xl overflow-hidden"
+				onClick={() => func()}
+			>
+				<div className={buttonClass}>{text}</div>
+			</div>
 		</div>
 	);
 };

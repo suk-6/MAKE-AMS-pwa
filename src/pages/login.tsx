@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Textbox } from "../components/textbox";
+import { Textbox } from "../components/textBox";
 import { login } from "../services/auth";
 
 const Login = () => {
