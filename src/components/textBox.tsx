@@ -11,7 +11,7 @@ export const Textbox = ({
 	value,
 	changeValue,
 }: TextboxProps) => (
-	<div className="flex justify-center items-center w-full h-auto">
+	<div className="flex justify-center items-center w-full h-fit">
 		<div className=" grid grid-rows-2 w-auto h-min">
 			<span className="h-min flex justify-start items-center text-black text-base font-normal font-['Pretendard']">
 				{inputBoxHint}
