@@ -1,5 +1,6 @@
 import QRCode from "react-qr-code";
 import { HomeButton } from "../components/homebutton";
+import { openDoor } from "../services/auth";
 
 const Home = () => {
 	if (!localStorage.getItem("code")) document.location.href = "/login";
@@ -18,8 +19,8 @@ const Home = () => {
 					/>
 				</div>
 				<div className="Group1 w-[195px] h-[195px] mr-2">
-					<HomeButton text="열기" color="green" />
-					<HomeButton text="로그아웃" color="red" />
+					<HomeButton text="열기" color="green" func={openDoor} />
+					<HomeButton text="로그아웃" color="red" func={() => {}} />
 				</div>
 			</div>
 		</div>

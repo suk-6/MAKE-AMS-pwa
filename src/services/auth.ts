@@ -39,3 +39,13 @@ export const register = async (
 	if (result.status !== true) return alert(result.message);
 	return (document.location.href = "/login");
 };
+
+export const openDoor = async () => {
+	const code = localStorage.getItem("code");
+	const result = await fetch(`${API_BASE_URL}/auth/access?code=${code}`).then(
+		(res) => res.text()
+	);
+
+	if (result === "true") return alert("문이 열렸습니다");
+	return alert("오류가 발생했습니다");
+};
