@@ -45,12 +45,11 @@ export const register = async (
 	return (document.location.href = "/login");
 };
 
-export const openDoor = async () => {
+export const checkDoor = async () => {
 	const code = localStorage.getItem("code");
-	const result = await fetch(`${API_BASE_URL}/auth/access?code=${code}`).then(
-		(res) => res.text()
+	const result = await fetch(`${API_BASE_URL}/auth/check?code=${code}`).then(
+		(res) => res.json()
 	);
 
-	if (result === "true") return alert("문이 열렸습니다");
-	return alert("오류가 발생했습니다");
+	return alert(result.message);
 };

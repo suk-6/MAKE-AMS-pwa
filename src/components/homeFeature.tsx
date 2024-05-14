@@ -1,6 +1,6 @@
 import QRCode from "react-qr-code";
 import { HomeButton } from "./homeButton";
-import { openDoor } from "../services/auth";
+import { checkDoor } from "../services/auth";
 
 export const HomeFeature = () => {
 	return (
@@ -12,7 +12,7 @@ export const HomeFeature = () => {
 					size={256}
 				/>
 			</div>
-			<HomeButton text="열기" color="green" func={openDoor} />
+			<HomeButton text="확인" color="green" func={checkDoor} />
 			<HomeButton
 				text="로그아웃"
 				color="red"
