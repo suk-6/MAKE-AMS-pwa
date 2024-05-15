@@ -41,6 +41,13 @@ export const rejectUser = async (id: string) => {
 	});
 };
 
+export const getLockStatus = async () => {
+	return await fetch(`${API_BASE_URL}/admin/door-status`).then((res) => {
+		if (res.status !== 200) return "error";
+		return res.json();
+	});
+};
+
 export const lockDoor = async () => {
 	return await fetch(
 		`${API_BASE_URL}/admin/lock?code=${localStorage.getItem("code")}`
@@ -53,6 +60,15 @@ export const lockDoor = async () => {
 export const unlockDoor = async () => {
 	return await fetch(
 		`${API_BASE_URL}/admin/unlock?code=${localStorage.getItem("code")}`
+	).then((res) => {
+		if (res.status !== 200) return false;
+		return true;
+	});
+};
+
+export const restrictDoor = async () => {
+	return await fetch(
+		`${API_BASE_URL}/admin/restrict?code=${localStorage.getItem("code")}`
 	).then((res) => {
 		if (res.status !== 200) return false;
 		return true;
