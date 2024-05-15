@@ -1,4 +1,5 @@
 import { AccessViewProps } from "../components/accessView";
+import { API_BASE_URL } from "../config";
 
 export const getUsersPendingSignup = async () => {
 	return [
@@ -16,18 +17,12 @@ export const getUsersPendingSignup = async () => {
 };
 
 export const getAccessLogs = async (): Promise<AccessViewProps[]> => {
-	return [
-		{
-			studentId: "test",
-			name: "test",
-			timestamp: Date.now(),
-		},
-		{
-			studentId: "test2",
-			name: "test2",
-			timestamp: Date.now(),
-		},
-	];
+	return await fetch(
+		`${API_BASE_URL}/admin/access-logs?code=${localStorage.getItem("code")}`
+	).then((res) => {
+		if (res.status !== 200) return [];
+		return res.json();
+	});
 };
 
 // export const approveUser = async () => {};
