@@ -1,3 +1,5 @@
+import { approveUser, rejectUser } from "../services/admin";
+
 export interface AccessRequestViewProps {
 	studentId: string;
 	name: string;
@@ -20,12 +22,26 @@ export const AccessRequestView = ({
 			<div className="text-sm text-gray-500">아이디: {id}</div>
 		</div>
 		<div className="buttons ml-auto mr-0 flex justify-center gap-2 text-xs">
-			<button onClick={() => {}}>
+			<button
+				onClick={() => {
+					approveUser(id).then((res) => {
+						if (res) alert("승인되었습니다.");
+						location.reload();
+					});
+				}}
+			>
 				<span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
 					승인
 				</span>
 			</button>
-			<button onClick={() => {}}>
+			<button
+				onClick={() => {
+					rejectUser(id).then((res) => {
+						if (res) alert("거절되었습니다.");
+						location.reload();
+					});
+				}}
+			>
 				<span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
 					거절
 				</span>

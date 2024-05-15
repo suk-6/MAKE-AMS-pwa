@@ -19,6 +19,27 @@ export const getAccessLogs = async (): Promise<AccessViewProps[]> => {
 	});
 };
 
-// export const approveUser = async () => {};
+export const approveUser = async (id: string) => {
+	return await fetch(
+		`${API_BASE_URL}/admin/approve?code=${localStorage.getItem(
+			"code"
+		)}&id=${id}`
+	).then((res) => {
+		if (res.status !== 200) return false;
+		return true;
+	});
+};
+
+export const rejectUser = async (id: string) => {
+	return await fetch(
+		`${API_BASE_URL}/admin/reject?code=${localStorage.getItem(
+			"code"
+		)}&id=${id}`
+	).then((res) => {
+		if (res.status !== 200) return false;
+		return true;
+	});
+};
+
 // export const lockDoor = async () => {};
 // export const unlockDoor = async () => {};
