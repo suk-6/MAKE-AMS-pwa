@@ -1,3 +1,4 @@
+import { lockDoor, unlockDoor } from "../../services/admin";
 import { HomeButton } from "../homeButton";
 import { TitleBar } from "../titleBar";
 
@@ -10,14 +11,20 @@ export const AdminFeature = () => {
 					text="강제 잠금"
 					color="bg-red1"
 					func={() => {
-						alert("강제 잠금");
+						lockDoor().then((res) => {
+							if (res) alert("문이 잠겼습니다.");
+							location.reload();
+						});
 					}}
 				/>
 				<HomeButton
 					text="해제"
 					color="bg-green1"
 					func={() => {
-						alert("해제");
+						unlockDoor().then((res) => {
+							if (res) alert("잠금이 해제되었습니다.");
+							location.reload();
+						});
 					}}
 				/>
 				<HomeButton
