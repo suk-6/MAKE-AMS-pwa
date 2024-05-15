@@ -5,13 +5,9 @@ interface ButtonProps {
 }
 
 export const HomeButton = ({ text, color, func }: ButtonProps) => {
-	let buttonClass =
-		"w-full h-full bg-green-400 text-black text-xl font-semibold font-['Pretendard'] flex items-center justify-center";
-	if (color === "green") {
-		buttonClass += " bg-green-400";
-	} else if (color === "red") {
-		buttonClass += " bg-red-400";
-	}
+	const buttonClass =
+		"w-full h-full bg-green-400 text-black text-xl font-semibold font-['Pretendard'] flex items-center justify-center" +
+		` ${color}`;
 	return (
 		<div className="w-full h-full flex justify-center items-center">
 			<div
