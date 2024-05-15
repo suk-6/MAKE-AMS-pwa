@@ -12,10 +12,10 @@ export const HomeFeature = () => {
 					size={256}
 				/>
 			</div>
-			<HomeButton text="확인" color="bg-green-400" func={checkDoor} />
+			<HomeButton text="확인" color="bg-green1" func={checkDoor} />
 			<HomeButton
 				text="로그아웃"
-				color="bg-red-400"
+				color="bg-red1"
 				func={() => {
 					localStorage.removeItem("code");
 					location.reload();
