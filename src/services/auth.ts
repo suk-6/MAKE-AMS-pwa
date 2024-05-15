@@ -61,11 +61,12 @@ export const checkAdmin = async () => {
 	return true;
 };
 
-export const checkDoor = async () => {
+export const checkQR = async () => {
 	const code = localStorage.getItem("code");
 	const result = await fetch(`${API_BASE_URL}/auth/check?code=${code}`).then(
 		(res) => res.json()
 	);
 
-	return alert(result.message);
+	if (result.status === true) return alert("사용 가능한 QR 코드입니다.");
+	return alert("사용 불가능한 QR 코드입니다.");
 };
