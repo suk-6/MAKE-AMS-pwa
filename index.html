@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no"
+		/>
 		<title>메이크 출입관리</title>
 
 		<link rel="manifest" href="manifest.json" />
@@ -25,6 +28,30 @@
 		<div id="root"></div>
 		<script type="module" src="/src/main.tsx"></script>
 		<script>
+			document.documentElement.addEventListener(
+				"touchstart",
+				function (event) {
+					if (event.touches.length > 1) {
+						event.preventDefault();
+					}
+				},
+				false
+			);
+
+			var lastTouchEnd = 0;
+
+			document.documentElement.addEventListener(
+				"touchend",
+				function (event) {
+					var now = new Date().getTime();
+					if (now - lastTouchEnd <= 300) {
+						event.preventDefault();
+					}
+					lastTouchEnd = now;
+				},
+				false
+			);
+
 			if ("serviceWorker" in navigator) {
 				// Register a service worker hosted at the root of the
 				// site using the default scope.
