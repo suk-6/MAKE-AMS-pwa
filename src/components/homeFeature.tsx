@@ -12,7 +12,14 @@ export const HomeFeature = () => {
 					size={256}
 				/>
 			</div>
-			<HomeButton text="확인" color="bg-green1" func={checkQR} />
+			<HomeButton
+				text="확인"
+				color="bg-green1"
+				func={() => {
+					checkQR();
+					location.reload();
+				}}
+			/>
 			<HomeButton
 				text="로그아웃"
 				color="bg-red1"
