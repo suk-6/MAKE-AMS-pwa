@@ -24,14 +24,14 @@ export const AdminFeature = () => {
 					text="가입 승인"
 					color="bg-cyan1"
 					func={() => {
-						alert("가입 승인");
+						location.href = "/access-request";
 					}}
 				/>
 				<HomeButton
 					text="출입 로그"
 					color="bg-yellow1"
 					func={() => {
-						alert("출입 로그");
+						location.href = "/access-log";
 					}}
 				/>
 			</div>

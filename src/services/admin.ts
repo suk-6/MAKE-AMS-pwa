@@ -1,3 +1,5 @@
+import { AccessViewProps } from "../components/accessView";
+
 export const getUsersPendingSignup = async () => {
 	return [
 		{
@@ -13,17 +15,17 @@ export const getUsersPendingSignup = async () => {
 	];
 };
 
-export const getAccessLogs = async () => {
+export const getAccessLogs = async (): Promise<AccessViewProps[]> => {
 	return [
 		{
 			studentId: "test",
 			name: "test",
-			time: "2021-10-10 10:10:10",
+			timestamp: Date.now(),
 		},
 		{
 			studentId: "test2",
 			name: "test2",
-			time: "2021-10-10 10:10:10",
+			timestamp: Date.now(),
 		},
 	];
 };

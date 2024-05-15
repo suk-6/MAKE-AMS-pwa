@@ -1,3 +1,5 @@
+import colors from "tailwindcss/colors";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -10,6 +12,7 @@ export default {
       current: 'currentColor',
       white: '#FFFFFF',
       black: '#000000',
+      gray: colors.gray,
       red1: '#E65C5C',
       blue1: '#5C93E6',
       green1: '#5CE66A',
