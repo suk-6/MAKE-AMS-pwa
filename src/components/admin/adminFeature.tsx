@@ -31,7 +31,7 @@ export const AdminFeature = () => {
 						}}
 					/>
 					<HomeButton
-						text="해제"
+						text="자유 출입"
 						color="bg-blue1"
 						func={() => {
 							unlockDoor().then((res) => {
