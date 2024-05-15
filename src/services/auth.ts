@@ -45,6 +45,22 @@ export const register = async (
 	return (document.location.href = "/login");
 };
 
+export const checkAdmin = async () => {
+	const code = localStorage.getItem("code");
+
+	// test account
+	if (code === "test") {
+		return true;
+	}
+
+	const result = await fetch(`${API_BASE_URL}/auth/admin?code=${code}`).then(
+		(res) => res.json()
+	);
+
+	if (result.status !== true) return false;
+	return true;
+};
+
 export const checkDoor = async () => {
 	const code = localStorage.getItem("code");
 	const result = await fetch(`${API_BASE_URL}/auth/check?code=${code}`).then(
