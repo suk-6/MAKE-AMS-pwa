@@ -1,35 +1,35 @@
 export interface AccessRequestViewProps {
-    studentId: string;
-    name: string;
-    id: string;
+	studentId: string;
+	name: string;
+	id: string;
 }
 
 Intl.DateTimeFormat("kr", {
-    dateStyle: "medium"
-})
+	dateStyle: "medium",
+});
 
 export const AccessRequestView = ({
-    studentId,
-    name,
-    id
+	studentId,
+	name,
+	id,
 }: AccessRequestViewProps) => (
-    <div className="p-5 border-b border-gray-200 flex flex-row">
-        <div className="info">
-            <div className="text-sm text-gray-600">학번: {studentId}</div>
-            <div className="text-lg font-semibold">{name}</div>
-            <div className="text-sm text-gray-500">아이디: {id}</div>
-        </div>
-        <div className="buttons ml-auto mr-0 flex justify-center gap-2 text-xs">
-            <button onClick={() => {}}>
-                <span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
-                    승인
-                </span>
-            </button>
-            <button onClick={() => {}}>
-                <span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
-                    거절
-                </span>
-            </button>
-        </div>
-    </div>
-)
+	<div className="p-5 border-b border-gray-200 flex flex-row">
+		<div className="info">
+			<div className="text-sm text-gray-600">학번: {studentId}</div>
+			<div className="text-lg font-semibold">{name}</div>
+			<div className="text-sm text-gray-500">아이디: {id}</div>
+		</div>
+		<div className="buttons ml-auto mr-0 flex justify-center gap-2 text-xs">
+			<button onClick={() => {}}>
+				<span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
+					승인
+				</span>
+			</button>
+			<button onClick={() => {}}>
+				<span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
+					거절
+				</span>
+			</button>
+		</div>
+	</div>
+);
