@@ -48,11 +48,6 @@ export const register = async (
 export const checkAdmin = async () => {
 	const code = localStorage.getItem("code");
 
-	// test account
-	if (code === "test") {
-		return true;
-	}
-
 	const result = await fetch(`${API_BASE_URL}/auth/admin?code=${code}`).then(
 		(res) => res.json()
 	);
