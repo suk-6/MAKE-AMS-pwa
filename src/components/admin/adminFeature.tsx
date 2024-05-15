@@ -51,7 +51,7 @@ export const AdminFeature = () => {
 						}}
 					/>
 					<HomeButton
-						text="출입 로그"
+						text="출입 기록"
 						color="bg-gray-300"
 						func={() => {
 							location.href = "/access-log";
