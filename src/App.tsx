@@ -8,8 +8,11 @@ import { Route, Routes } from "react-router-dom";
 import { AccessLogPage } from "./pages/accessLog";
 import { AccessRequestPage } from "./pages/accessRequest";
 import { QRView } from "./pages/qr";
+import { useEffect } from "react";
 
 const App = () => {
+	useEffect(() => {}, []);
+
 	return (
 		<div className=" fixed w-full h-full overflow-hidden">
 			<Routes>
