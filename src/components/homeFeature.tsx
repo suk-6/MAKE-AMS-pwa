@@ -22,8 +22,8 @@ export const HomeFeature = () => {
 	return (
 		<div className="w-full h-3/6 flex justify-center items-center">
 			<div className="w-5/6 h-full bg-blue2 rounded-3xl flex flex-col shadow-2xl">
-				<div className="text-center font-semibold text-3xl mt-auto mb-[-75px]">
-					QR코드 스캔
+				<div className="text-center font-semibold text-3xl mt-auto mb-[-20%] flex justify-center w-full">
+					<span>QR코드 스캔</span>
 				</div>
 				<div className="w-full h-full flex items-center justify-center pt-10">
 					<div className="w-72 h-72 flex justify-center items-center">
