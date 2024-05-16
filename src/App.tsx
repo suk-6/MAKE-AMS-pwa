@@ -45,6 +45,8 @@ const App = () => {
 				alert("iOS에서는 앱 설치가 지원되지 않습니다");
 				return;
 			}
+
+			setIsInstalled(true);
 			alert("이미 앱이 설치되어 있거나 앱을 설치할 수 없는 환경입니다");
 			return;
 		}
