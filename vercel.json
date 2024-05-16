@@ -3,6 +3,7 @@
 	"rewrites": [
 		{ "source": "/", "destination": "/" },
 		{ "source": "/qr", "destination": "/" },
+		{ "source": "/admin", "destination": "/" },
 		{ "source": "/login", "destination": "/" },
 		{ "source": "/register", "destination": "/" },
 		{ "source": "/access-log", "destination": "/" },
