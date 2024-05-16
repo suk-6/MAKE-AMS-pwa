@@ -9,6 +9,7 @@ import { AccessLogPage } from "./pages/accessLog";
 import { AccessRequestPage } from "./pages/accessRequest";
 import { QRView } from "./pages/qr";
 import { useEffect } from "react";
+import { AdminView } from "./pages/admin";
 
 const App = () => {
 	useEffect(() => {}, []);
@@ -18,6 +19,7 @@ const App = () => {
 			<Routes>
 				<Route path="/" Component={Home} />
 				<Route path="/qr" Component={QRView} />
+				<Route path="/admin" Component={AdminView} />
 				<Route path="/login" Component={Login} />
 				<Route path="/register" Component={Register} />
 				<Route path="/access-log" Component={AccessLogPage} />
