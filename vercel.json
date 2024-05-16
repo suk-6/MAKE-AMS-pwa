@@ -2,6 +2,7 @@
 	"version": 2,
 	"rewrites": [
 		{ "source": "/", "destination": "/" },
+		{ "source": "/qr", "destination": "/" },
 		{ "source": "/login", "destination": "/" },
 		{ "source": "/register", "destination": "/" },
 		{ "source": "/access-log", "destination": "/" },
