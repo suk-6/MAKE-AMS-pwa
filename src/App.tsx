@@ -21,6 +21,7 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 const App = () => {
+	const [isInstalled, setIsInstalled] = useState(false);
 	const [deferredPrompt, setDeferredPrompt] =
 		useState<BeforeInstallPromptEvent>();
 	const userAgent = navigator.userAgent.toLowerCase();
@@ -49,11 +50,15 @@ const App = () => {
 		}
 
 		deferredPrompt.prompt();
+
+		deferredPrompt.userChoice.then(() => {
+			setIsInstalled(true);
+		});
 	};
 
 	return (
 		<div className=" fixed w-full h-full overflow-hidden">
-			{deferredPrompt ? (
+			{isInstalled ? (
 				<Routes>
 					<Route path="/" Component={Home} />
 					<Route path="/qr" Component={QRView} />
