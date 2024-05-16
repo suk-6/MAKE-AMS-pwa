@@ -1,8 +1,10 @@
 import QRCode from "react-qr-code";
 import { HomeButton } from "./homeButton";
 import { checkQR } from "../services/auth";
+import { useNavigate } from "react-router-dom";
 
 export const HomeFeature = () => {
+	const navigate = useNavigate();
 	return (
 		<div className=" grid grid-cols-2 grid-rows-2 gap-1 w-full h-[25%]">
 			<div className="w-full h-full flex items-center justify-center row-span-2">
@@ -10,6 +12,7 @@ export const HomeFeature = () => {
 					className=" w-[90%] h-[90%]"
 					value={localStorage.getItem("code") || ""}
 					size={256}
+					onClick={() => navigate("/qr")}
 				/>
 			</div>
 			<HomeButton
