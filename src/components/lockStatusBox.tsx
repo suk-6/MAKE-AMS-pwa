@@ -5,35 +5,32 @@ interface lockStatusBoxProps {
 }
 
 export const LockStatusBox = ({ status }: lockStatusBoxProps) => {
-	if (status === DoorStatus.LOCKED) {
-		return (
-			<div className="bg-red1 flex border-spacing-2 p-5 m-2 text-3xl font-bold font-['Pretendard'] justify-center items-center">
-				출입 제한 상태입니다.
-			</div>
-		);
-	}
+	const boxClass =
+		"flex border-spacing-2 p-5 m-2 text-3xl font-bold font-['Pretendard'] justify-center items-center";
 
-	if (status === DoorStatus.RESTRICTED) {
-		return (
-			<div className="bg-green1 flex border-spacing-2 p-5 m-2 text-3xl font-bold font-['Pretendard'] justify-center items-center">
-				QR 출입 상태입니다.
-			</div>
-		);
-	}
+	switch (status) {
+		case DoorStatus.LOCKED:
+			return (
+				<div className={`${boxClass} bg-red1`}>
+					출입 제한 상태입니다.
+				</div>
+			);
 
-	if (status === DoorStatus.UNLOCKED) {
-		return (
-			<div className="bg-blue1 flex border-spacing-2 p-5 m-2 text-3xl font-bold font-['Pretendard'] justify-center items-center">
-				자유 출입 상태입니다.
-			</div>
-		);
-	}
+		case DoorStatus.RESTRICTED:
+			return (
+				<div className={`${boxClass} bg-green1`}>
+					QR 출입 상태입니다.
+				</div>
+			);
 
-	if (status === undefined) {
-		return (
-			<div className="bg-gray-300 flex border-spacing-2 p-5 m-2 text-3xl font-bold font-['Pretendard'] justify-center items-center">
-				로딩 중...
-			</div>
-		);
+		case DoorStatus.UNLOCKED:
+			return (
+				<div className={`${boxClass} bg-blue1`}>
+					자유 출입 상태입니다.
+				</div>
+			);
+
+		default:
+			return <div className={`${boxClass} bg-gray-300`}>로딩 중...</div>;
 	}
 };
