@@ -4,13 +4,12 @@ import { AdminFeature } from "../components/admin/adminFeature";
 import { checkAdmin } from "../services/auth";
 import { useEffect, useState } from "react";
 import { LockStatusBox } from "../components/lockStatusBox";
-import { DoorStatus } from "../misc/doorStatus";
 import { getLockStatus } from "../services/admin";
 
 const Home = () => {
 	if (!localStorage.getItem("code")) document.location.href = "/login";
 	const [isAdmin, setIsAdmin] = useState(false);
-	const [lockStatus, setLockStatus] = useState(DoorStatus.LOCKED);
+	const [lockStatus, setLockStatus] = useState(undefined);
 
 	useEffect(() => {
 		checkAdmin().then((result) => {
