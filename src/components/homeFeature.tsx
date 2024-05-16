@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 export const HomeFeature = () => {
 	const navigate = useNavigate();
+
 	useEffect(() => {
 		try {
 			checkQR().then((res) => {
@@ -20,7 +21,7 @@ export const HomeFeature = () => {
 		} catch (e) {
 			return alert("오류가 발생했습니다. 다시 로그인해주세요.");
 		}
-	}, []);
+	}, [navigate]);
 
 	return (
 		<div className="w-full h-3/6 flex justify-center items-center">
