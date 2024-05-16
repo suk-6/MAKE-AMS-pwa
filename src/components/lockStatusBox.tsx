@@ -31,6 +31,6 @@ export const LockStatusBox = ({ status }: lockStatusBoxProps) => {
 			);
 
 		default:
-			return <div className={`${boxClass} bg-gray-300`}>로딩 중...</div>;
+			return <div className={`${boxClass} bg-gray-200`}>로딩 중...</div>;
 	}
 };
