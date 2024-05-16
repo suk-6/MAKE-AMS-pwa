@@ -62,6 +62,6 @@ export const checkQR = async () => {
 		(res) => res.json()
 	);
 
-	if (result.status === true) return alert("사용 가능한 QR 코드입니다.");
-	return alert("사용 불가능한 QR 코드입니다.");
+	if (result.status === true) return true;
+	return false;
 };
