@@ -53,7 +53,7 @@ const App = () => {
 
 	return (
 		<div className=" fixed w-full h-full overflow-hidden">
-			{!deferredPrompt ? (
+			{deferredPrompt ? (
 				<Routes>
 					<Route path="/" Component={Home} />
 					<Route path="/qr" Component={QRView} />
