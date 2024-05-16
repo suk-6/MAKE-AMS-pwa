@@ -19,7 +19,7 @@ const Home = () => {
 		getLockStatus().then((status) => {
 			setLockStatus(status.status);
 		});
-	});
+	}, []);
 
 	return (
 		<div className="fixed w-full h-full bg-white">
