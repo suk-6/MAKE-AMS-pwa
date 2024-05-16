@@ -25,7 +25,7 @@ const Home = () => {
 		<div className="fixed w-full h-full bg-white">
 			<TitleBar title="메이커스페이스 출입관리" />
 			<LockStatusBox status={lockStatus} />
-			<div className="h-4"></div>
+			<div className="h-8"></div>
 			<HomeFeature />
 			{isAdmin && <AdminFeature />}
 		</div>
