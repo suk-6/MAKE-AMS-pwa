@@ -7,12 +7,14 @@ import Register from "./pages/register";
 import { Route, Routes } from "react-router-dom";
 import { AccessLogPage } from "./pages/accessLog";
 import { AccessRequestPage } from "./pages/accessRequest";
+import { QRView } from "./pages/qr";
 
 const App = () => {
 	return (
 		<div className=" fixed w-full h-full overflow-hidden">
 			<Routes>
 				<Route path="/" Component={Home} />
+				<Route path="/qr" Component={QRView} />
 				<Route path="/login" Component={Login} />
 				<Route path="/register" Component={Register} />
 				<Route path="/access-log" Component={AccessLogPage} />
