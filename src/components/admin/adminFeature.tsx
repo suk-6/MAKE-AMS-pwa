@@ -4,9 +4,9 @@ import { TitleBar } from "../titleBar";
 
 export const AdminFeature = () => {
 	return (
-		<div className="h-[25%]">
+		<div className="h-[30%]">
 			<TitleBar title="관리자" />
-			<div className="grid grid-rows-2 h-5/6 gap-y-3">
+			<div className="grid grid-rows-2 h-full gap-y-3">
 				<div className="grid grid-cols-3">
 					<HomeButton
 						text="출입 제한"
@@ -15,7 +15,7 @@ export const AdminFeature = () => {
 							lockDoor().then((res) => {
 								if (res)
 									alert("출입 제한 상태로 변경되었습니다.");
-								location.reload();
+								location.href = "/";
 							});
 						}}
 					/>
@@ -26,7 +26,7 @@ export const AdminFeature = () => {
 							restrictDoor().then((res) => {
 								if (res)
 									alert("QR 출입 상태로 변경되었습니다.");
-								location.reload();
+								location.href = "/";
 							});
 						}}
 					/>
@@ -37,7 +37,7 @@ export const AdminFeature = () => {
 							unlockDoor().then((res) => {
 								if (res)
 									alert("자유 출입 상태로 변경되었습니다.");
-								location.reload();
+								location.href = "/";
 							});
 						}}
 					/>
