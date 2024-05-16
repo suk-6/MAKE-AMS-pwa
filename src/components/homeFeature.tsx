@@ -19,12 +19,16 @@ export const HomeFeature = () => {
 				text="확인"
 				color="bg-green1"
 				func={() => {
-					checkQR().then((res) => {
-						if (res) return location.reload();
-						return alert(
-							"유효하지 않은 QR입니다. 다시 로그인해주세요."
-						);
-					});
+					try {
+						checkQR().then((res) => {
+							if (res) return location.reload();
+							return alert(
+								"유효하지 않은 QR입니다. 다시 로그인해주세요."
+							);
+						});
+					} catch (e) {
+						alert("오류가 발생했습니다. 다시 로그인해주세요.");
+					}
 				}}
 			/>
 			<HomeButton
