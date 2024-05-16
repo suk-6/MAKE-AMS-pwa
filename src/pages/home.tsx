@@ -30,14 +30,18 @@ const Home = () => {
 			<div className="h-[3%]" />
 			<HomeFeature />
 			<div className="h-[5%]" />
-			<div className="h-[10%]">
-				{isAdmin && (
-					<HomeButton
-						text="관리자 메뉴"
-						color="bg-gray-300"
-						func={() => navigator("/admin")}
-					/>
-				)}
+			<div className="h-[10%] ">
+				<HomeButton
+					text={isAdmin ? "관리자 메뉴" : "로그아웃"}
+					color="bg-gray-300"
+					func={() => {
+						if (!isAdmin) {
+							localStorage.removeItem("code");
+							return navigator("/login");
+						}
+						return navigator("/admin");
+					}}
+				/>
 			</div>
 		</div>
 	);
