@@ -1,7 +1,7 @@
 import { DoorStatus } from "../misc/doorStatus";
 
 interface lockStatusBoxProps {
-	status: DoorStatus;
+	status: DoorStatus | undefined;
 }
 
 export const LockStatusBox = ({ status }: lockStatusBoxProps) => {
@@ -25,6 +25,14 @@ export const LockStatusBox = ({ status }: lockStatusBoxProps) => {
 		return (
 			<div className="bg-blue1 flex border-spacing-2 p-5 m-2 text-3xl font-bold font-['Pretendard'] justify-center items-center">
 				자유 출입 상태입니다.
+			</div>
+		);
+	}
+
+	if (status === undefined) {
+		return (
+			<div className="bg-gray-300 flex border-spacing-2 p-5 m-2 text-3xl font-bold font-['Pretendard'] justify-center items-center">
+				로딩 중...
 			</div>
 		);
 	}
