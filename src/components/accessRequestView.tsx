@@ -1,4 +1,4 @@
-import { approveUser, rejectUser } from "../services/admin";
+import { approveAdmin, approveUser, rejectUser } from "../services/admin";
 
 export interface AccessRequestViewProps {
 	studentId: string;
@@ -22,6 +22,19 @@ export const AccessRequestView = ({
 			<div className="text-sm text-gray-500">아이디: {id}</div>
 		</div>
 		<div className="buttons ml-auto mr-0 flex justify-center gap-2 text-xs">
+			<button
+				onClick={() => {
+					if (confirm(`${name}님을 관리자로 승인하시겠습니까?`))
+						approveAdmin(id).then((res) => {
+							if (res) alert("승인되었습니다.");
+							location.reload();
+						});
+				}}
+			>
+				<span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
+					관리자
+				</span>
+			</button>
 			<button
 				onClick={() => {
 					if (confirm(`${name}님을 승인하시겠습니까?`))
