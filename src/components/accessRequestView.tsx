@@ -24,10 +24,11 @@ export const AccessRequestView = ({
 		<div className="buttons ml-auto mr-0 flex justify-center gap-2 text-xs">
 			<button
 				onClick={() => {
-					approveUser(id).then((res) => {
-						if (res) alert("승인되었습니다.");
-						location.reload();
-					});
+					if (confirm(`${name}님을 승인하시겠습니까?`))
+						approveUser(id).then((res) => {
+							if (res) alert("승인되었습니다.");
+							location.reload();
+						});
 				}}
 			>
 				<span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
@@ -36,10 +37,11 @@ export const AccessRequestView = ({
 			</button>
 			<button
 				onClick={() => {
-					rejectUser(id).then((res) => {
-						if (res) alert("거절되었습니다.");
-						location.reload();
-					});
+					if (confirm(`${name}님을 거절하시겠습니까?`))
+						rejectUser(id).then((res) => {
+							if (res) alert("거절되었습니다.");
+							location.reload();
+						});
 				}}
 			>
 				<span className="px-4 py-[0.6rem] border rounded-sm transition ease-in-out duration-100 hover:bg-gray-100">
