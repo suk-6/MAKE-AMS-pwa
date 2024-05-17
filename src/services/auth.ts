@@ -19,6 +19,7 @@ export const login = async (id: string, password: string) => {
 
 	if (result.status !== true) return alert(result.message);
 	localStorage.setItem("code", result.code);
+	localStorage.setItem("renewalDate", new Date().getTime().toString());
 
 	return (document.location.href = "/");
 };
@@ -57,12 +58,36 @@ export const checkAdmin = async () => {
 	return true;
 };
 
+const regenerateQR = async () => {
+	const code = localStorage.getItem("code");
+	const result = await fetch(
+		`${API_BASE_URL}/auth/regenerate?code=${code}`
+	).then((res) => res.json());
+
+	if (result.status !== true) {
+		alert("QR 코드 갱신에 오류가 발생했습니다.");
+		return false;
+	}
+
+	localStorage.setItem("code", result.code);
+	localStorage.setItem("renewalDate", new Date().getTime().toString());
+	return true;
+};
+
 export const checkQR = async () => {
 	const code = localStorage.getItem("code");
 	const result = await fetch(`${API_BASE_URL}/auth/check?code=${code}`).then(
 		(res) => res.json()
 	);
 
-	if (result.status === true) return true;
+	if (result.status === true) {
+		const now = new Date().getTime();
+		const renewalDate = localStorage.getItem("renewalDate");
+
+		if (renewalDate && now - Number(renewalDate) > 1000 * 60 * 60 * 24)
+			return regenerateQR();
+
+		return true;
+	}
 	return false;
 };
