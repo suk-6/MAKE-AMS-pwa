@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TitleBar } from "../components/titleBar";
 
 interface BeforeInstallPromptEvent extends Event {
 	readonly platforms: Array<string>;
@@ -42,12 +43,15 @@ export const InstallPage = () => {
 	};
 
 	return (
-		<div className=" installApp w-full h-full flex items-center justify-center">
-			<div
-				onClick={installApp}
-				className="border border-black px-10 py-5 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
-			>
-				앱 설치하기
+		<div className=" installApp w-full h-full bg-white">
+			<TitleBar title="앱 설치 안내" />
+			<div className="flex items-center justify-center">
+				<div
+					onClick={installApp}
+					className="border border-black px-14 py-4 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
+				>
+					앱 설치하기
+				</div>
 			</div>
 		</div>
 	);
