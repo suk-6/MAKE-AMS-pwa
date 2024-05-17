@@ -25,24 +25,24 @@ export const HomeFeature = () => {
 
 	return (
 		<div className="w-full h-3/6 flex justify-center items-center">
-			<div className="w-5/6 h-full bg-blue2 rounded-3xl flex flex-col shadow-2xl">
-				<div className="text-center font-semibold text-3xl mt-auto mb-[-20%] flex justify-center w-full">
+			<div className=" w-[20rem] h-[20rem]  bg-blue2 rounded-3xl flex flex-col shadow-2xl">
+				{/* <div className="text-center font-semibold text-3xl mt-auto mb-[-20%] flex justify-center w-full">
 					<span>QR코드 스캔</span>
-				</div>
-				<div className="w-full h-full flex items-center justify-center pt-10">
-					<div className="w-72 h-72 flex justify-center items-center">
-						<QRCode
-							className=" w-[68%] h-[68%]"
-							value={localStorage.getItem("code") || ""}
-							size={256}
-							bgColor="#6CB2FF"
-							onClick={() => navigate("/qr")}
-						/>
-						<div className="grid grid-cols-2 grid-rows-2 gap-60 absolute">
-							<div className="w-6 h-6 border-t-[0.4rem] border-l-[0.4rem] border-white" />
-							<div className="w-6 h-6 border-t-[0.4rem] border-r-[0.4rem] border-white" />
-							<div className="w-6 h-6 border-b-[0.4rem] border-l-[0.4rem] border-white" />
-							<div className="w-6 h-6 border-b-[0.4rem] border-r-[0.4rem] border-white" />
+				</div> */}
+				<div className="w-full h-full flex items-center justify-center">
+					<QRCode
+						className=" w-48 absolute"
+						value={localStorage.getItem("code") || ""}
+						size={256}
+						bgColor="#6CB2FF"
+						onClick={() => navigate("/qr")}
+					/>
+					<div className="">
+						<div className="grid grid-cols-2 grid-rows-2 gap-52">
+							<div className="w-[1.5rem] h-[1.5rem] border-t-[4px] border-l-[4px] border-white" />
+							<div className="w-[1.5rem] h-[1.5rem] border-t-[4px] border-r-[4px] border-white" />
+							<div className="w-[1.5rem] h-[1.5rem] border-b-[4px] border-l-[4px] border-white" />
+							<div className="w-[1.5rem] h-[1.5rem] border-b-[4px] border-r-[4px] border-white" />
 						</div>
 					</div>
 				</div>
