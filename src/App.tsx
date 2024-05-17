@@ -21,7 +21,6 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 const App = () => {
-	const [isInstalled, setIsInstalled] = useState(false);
 	const [deferredPrompt, setDeferredPrompt] =
 		useState<BeforeInstallPromptEvent>();
 	const userAgent = navigator.userAgent.toLowerCase();
@@ -46,40 +45,34 @@ const App = () => {
 				return;
 			}
 
-			setIsInstalled(true);
 			alert("이미 앱이 설치되어 있거나 앱을 설치할 수 없는 환경입니다");
 			return;
 		}
 
 		deferredPrompt.prompt();
 
-		deferredPrompt.userChoice.then(() => {
-			setIsInstalled(true);
-		});
+		deferredPrompt.userChoice.then(() => {});
 	};
 
 	return (
 		<div className=" fixed w-full h-full overflow-hidden">
-			{isInstalled ? (
-				<Routes>
-					<Route path="/" Component={Home} />
-					<Route path="/qr" Component={QRView} />
-					<Route path="/admin" Component={AdminView} />
-					<Route path="/login" Component={Login} />
-					<Route path="/register" Component={Register} />
-					<Route path="/access-log" Component={AccessLogPage} />
-					<Route
-						path="/access-request"
-						Component={AccessRequestPage}
-					/>
-				</Routes>
-			) : (
-				<div className=" w-full h-full flex items-center justify-center">
-					<div className="border border-black px-10 py-5 rounded-lg bg-gray-200">
-						<button onClick={installApp}>앱 설치하기</button>
-					</div>
+			<div className=" installApp w-full h-full flex items-center justify-center">
+				<div
+					onClick={installApp}
+					className="border border-black px-10 py-5 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
+				>
+					앱 설치하기
 				</div>
-			)}
+			</div>
+			<Routes>
+				<Route path="/" Component={Home} />
+				<Route path="/qr" Component={QRView} />
+				<Route path="/admin" Component={AdminView} />
+				<Route path="/login" Component={Login} />
+				<Route path="/register" Component={Register} />
+				<Route path="/access-log" Component={AccessLogPage} />
+				<Route path="/access-request" Component={AccessRequestPage} />
+			</Routes>
 			<Analytics />
 		</div>
 	);
