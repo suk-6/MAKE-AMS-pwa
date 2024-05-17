@@ -84,7 +84,10 @@ export const checkQR = async () => {
 		const now = new Date().getTime();
 		const renewalDate = localStorage.getItem("renewalDate");
 
-		if (renewalDate && now - Number(renewalDate) > 1000 * 60 * 60 * 24)
+		if (
+			renewalDate === null ||
+			now - Number(renewalDate) > 1000 * 60 * 60 * 24
+		)
 			return regenerateQR();
 
 		return true;
