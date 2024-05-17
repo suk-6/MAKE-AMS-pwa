@@ -46,12 +46,14 @@ export const InstallPage = () => {
 	};
 
 	const skip = () => {
-		if (!confirm("정말 웹 버전을 이용하시겠습니까?"))
-			if (!confirm("웬만하면 앱 설치가 좋을텐데요?"))
-				if (!confirm("정말 웹으로..?")) return;
-
-		setSkiped(true);
-		localStorage.setItem("skip", "true");
+		if (confirm("정말 웹 버전을 이용하시겠습니까?")) {
+			if (confirm("웬만하면 앱 설치가 좋을텐데요?")) {
+				if (confirm("정말 웹으로..?")) {
+					setSkiped(true);
+					localStorage.setItem("skip", "true");
+				}
+			}
+		}
 	};
 
 	return (
