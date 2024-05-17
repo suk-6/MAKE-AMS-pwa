@@ -19,6 +19,17 @@ export const getAccessLogs = async (): Promise<AccessViewProps[]> => {
 	});
 };
 
+export const approveAdmin = async (id: string) => {
+	return await fetch(
+		`${API_BASE_URL}/auth/setadmin?code=${localStorage.getItem(
+			"code"
+		)}&id=${id}`
+	).then((res) => {
+		if (res.status !== 200) return false;
+		return true;
+	});
+};
+
 export const approveUser = async (id: string) => {
 	return await fetch(
 		`${API_BASE_URL}/admin/approve?code=${localStorage.getItem(
