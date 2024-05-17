@@ -25,9 +25,11 @@ export const AccessRequestView = ({
 			<button
 				onClick={() => {
 					if (confirm(`${name}님을 관리자로 승인하시겠습니까?`))
-						approveAdmin(id).then((res) => {
-							if (res) alert("승인되었습니다.");
-							location.reload();
+						approveAdmin(id).then(() => {
+							approveUser(id).then((res) => {
+								if (res) alert("승인되었습니다.");
+								location.reload();
+							});
 						});
 				}}
 			>
