@@ -48,7 +48,7 @@ export const InstallPage = () => {
 			<div className="flex items-center justify-center">
 				<div
 					onClick={installApp}
-					className="border border-black px-14 py-4 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
+					className="border-[0.05rem] border-black px-14 py-4 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
 				>
 					앱 설치하기
 				</div>
