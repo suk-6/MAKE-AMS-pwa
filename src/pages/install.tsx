@@ -45,13 +45,23 @@ export const InstallPage = () => {
 	return (
 		<div className=" installApp w-full h-full bg-white">
 			<TitleBar title="앱 설치 안내" />
-			<div className="flex items-center justify-center">
-				<div
-					onClick={installApp}
-					className="border-[0.05rem] border-black px-14 py-4 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
-				>
-					앱 설치하기
+			<div className="mb-10">
+				<span className="flex items-center justify-center mb-3">
+					안드로이드는 아래 버튼을 터치하여 앱을 설치해주세요.
+				</span>
+				<div className="flex items-center justify-center">
+					<div
+						onClick={installApp}
+						className="border-[0.05rem] border-black px-14 py-4 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
+					>
+						앱 설치하기
+					</div>
 				</div>
+			</div>
+			<div>
+				<span className="flex items-center justify-center">
+					아이폰 사용자는 아래 지시를 따라주세요.
+				</span>
 			</div>
 		</div>
 	);
