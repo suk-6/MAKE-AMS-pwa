@@ -10,3 +10,9 @@
 * {
 	font-family: Pretendard, sans-serif;
 }
+
+@media all and (display-mode: standalone) {
+	.installApp {
+		display: none;
+	}
+}
