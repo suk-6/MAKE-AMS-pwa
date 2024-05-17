@@ -50,8 +50,6 @@ const App = () => {
 		}
 
 		deferredPrompt.prompt();
-
-		deferredPrompt.userChoice.then(() => {});
 	};
 
 	return (
