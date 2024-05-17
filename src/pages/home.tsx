@@ -37,6 +37,7 @@ const Home = () => {
 					func={() => {
 						if (!isAdmin) {
 							localStorage.removeItem("code");
+							localStorage.removeItem("skip");
 							return navigator("/login");
 						}
 						return navigator("/admin");
