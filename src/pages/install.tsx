@@ -85,7 +85,7 @@ export const InstallPage = () => {
 				<span className="flex items-center justify-center mb-3">
 					아이폰 사용자는 아래 지시를 따라주세요.
 				</span>
-				<img src="ios.png" alt="" />
+				<img src="ios.webp" alt="" />
 			</div>
 			<div className=" w-full flex justify-center items-center py-5">
 				<div className="w-[95%] border-[1px] border-black" />
