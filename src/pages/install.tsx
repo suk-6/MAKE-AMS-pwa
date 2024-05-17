@@ -99,7 +99,7 @@ export const InstallPage = () => {
 						onClick={skip}
 						className="border-[0.05rem] border-black px-14 py-4 rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer"
 					>
-						스킵하기
+						웹 버전 이용
 					</div>
 				</div>
 			</div>
