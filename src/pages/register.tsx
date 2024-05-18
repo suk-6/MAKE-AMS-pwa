@@ -19,13 +19,15 @@ const Register = () => {
 				<div className="grid grid-rows-4 gap-5 h-fit row-span-2">
 					<Textbox
 						inputBoxHint="아이디"
-						inputBoxType="username"
+						inputBoxType="text"
+						autoComplete="username"
 						value={id}
 						changeValue={setId}
 					/>
 					<Textbox
 						inputBoxHint="비밀번호"
-						inputBoxType="new-password"
+						inputBoxType="password"
+						autoComplete="new-password"
 						value={password}
 						changeValue={setPassword}
 					/>
@@ -37,7 +39,8 @@ const Register = () => {
 					/>
 					<Textbox
 						inputBoxHint="이름"
-						inputBoxType="name"
+						inputBoxType="text"
+						autoComplete="name"
 						value={name}
 						changeValue={setName}
 					/>

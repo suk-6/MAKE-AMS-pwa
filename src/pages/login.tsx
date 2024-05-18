@@ -17,13 +17,15 @@ const Login = () => {
 				<div className="grid grid-rows-2 gap-6 h-full row-span-2">
 					<Textbox
 						inputBoxHint="아이디"
-						inputBoxType="username"
+						inputBoxType="text"
+						autoComplete="username"
 						value={id}
 						changeValue={setId}
 					/>
 					<Textbox
 						inputBoxHint="비밀번호"
-						inputBoxType="current-password"
+						inputBoxType="password"
+						autoComplete="current-password"
 						value={password}
 						changeValue={setPassword}
 					/>
