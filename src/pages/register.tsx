@@ -15,8 +15,8 @@ const Register = () => {
 	return (
 		<div className="fixed w-full h-full bg-white">
 			<TitleBar title="회원가입" />
-			<div className="grid grid-rows-3 h-4/6 gap-10 pt-5">
-				<div className="grid grid-rows-4 gap-5 h-fit row-span-2">
+			<div className="flex flex-col h-full pt-5">
+				<div className="flex flex-col gap-y-8 h-fit">
 					<Textbox
 						inputBoxHint="아이디"
 						inputBoxType="text"
@@ -46,10 +46,10 @@ const Register = () => {
 					/>
 				</div>
 				<div
-					className="flex items-center justify-center w-full h-full"
+					className="flex items-center justify-center mb-[25%] mt-auto w-full h-32"
 					onClick={() => register(id, password, studentId, name)}
 				>
-					<div className="flex items-center justify-center w-4/6 h-3/6">
+					<div className="flex items-center justify-center w-full h-3/6">
 						<AuthButton text="회원가입" />
 					</div>
 				</div>
