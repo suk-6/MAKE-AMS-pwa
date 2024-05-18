@@ -37,9 +37,7 @@ const Home = () => {
 							text="관리자 메뉴"
 							color="bg-gray-300"
 							func={() => {
-								localStorage.removeItem("code");
-								localStorage.removeItem("skip");
-								return navigator("/login");
+								return navigator("/admin");
 							}}
 						/>
 						<HomeButton
