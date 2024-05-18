@@ -31,18 +31,38 @@ const Home = () => {
 			<HomeFeature />
 			<div className="h-[5%]" />
 			<div className="h-[10%] ">
-				<HomeButton
-					text={isAdmin ? "관리자 메뉴" : "로그아웃"}
-					color="bg-gray-300"
-					func={() => {
-						if (!isAdmin) {
+				{isAdmin ? (
+					<div className="flex flex-row h-[70%]">
+						<HomeButton
+							text="관리자 메뉴"
+							color="bg-gray-300"
+							func={() => {
+								localStorage.removeItem("code");
+								localStorage.removeItem("skip");
+								return navigator("/login");
+							}}
+						/>
+						<HomeButton
+							text="로그아웃"
+							color="bg-gray-300"
+							func={() => {
+								localStorage.removeItem("code");
+								localStorage.removeItem("skip");
+								return navigator("/login");
+							}}
+						/>
+					</div>
+				) : (
+					<HomeButton
+						text="로그아웃"
+						color="bg-gray-300"
+						func={() => {
 							localStorage.removeItem("code");
 							localStorage.removeItem("skip");
 							return navigator("/login");
-						}
-						return navigator("/admin");
-					}}
-				/>
+						}}
+					/>
+				)}
 			</div>
 		</div>
 	);
