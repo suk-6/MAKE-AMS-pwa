@@ -5,6 +5,7 @@ interface TextboxProps {
 	autoComplete?: string;
 	placeholder?: string;
 	changeValue: (value: string) => void;
+	enterEventHandler?: () => void;
 }
 
 export const Textbox = ({
@@ -14,6 +15,7 @@ export const Textbox = ({
 	autoComplete,
 	placeholder,
 	changeValue,
+	enterEventHandler,
 }: TextboxProps) => (
 	<div className="flex justify-center items-center w-full h-fit">
 		<div className=" flex flex-col items-start w-[70%] h-min">
@@ -26,6 +28,13 @@ export const Textbox = ({
 					value={value}
 					placeholder={placeholder}
 					autoComplete={autoComplete}
+					onKeyUp={(e: React.KeyboardEvent) => {
+						if (
+							e.key === "Enter" &&
+							enterEventHandler !== undefined
+						)
+							enterEventHandler();
+					}}
 					onChange={(e) => changeValue(e.target.value)}
 					className=" border-0 border-b-2 w-full h-full text-black text-base font-normal font-['Pretendard'] focus:outline-none rounded-none"
 				/>
