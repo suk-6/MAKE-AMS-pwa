@@ -32,7 +32,7 @@ const Home = () => {
 			<div className="h-[5%]" />
 			<div className="h-[10%] ">
 				{isAdmin ? (
-					<div className="flex flex-row h-[70%]">
+					<div className="flex flex-row h-full">
 						<HomeButton
 							text="관리자 메뉴"
 							color="bg-gray-300"
