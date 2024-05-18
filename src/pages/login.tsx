@@ -22,6 +22,9 @@ const Login = () => {
 						placeholder="아이디를 입력해주세요."
 						value={id}
 						changeValue={setId}
+						enterEventHandler={() => {
+							login(id, password);
+						}}
 					/>
 					<Textbox
 						inputBoxHint="비밀번호"
@@ -30,6 +33,9 @@ const Login = () => {
 						placeholder="비밀번호를 입력해주세요."
 						value={password}
 						changeValue={setPassword}
+						enterEventHandler={() => {
+							login(id, password);
+						}}
 					/>
 				</div>
 				<div className="flex flex-row items-center justify-center w-full h-32 mb-[25%] mt-auto gap-x-8">

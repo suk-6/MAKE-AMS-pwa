@@ -24,6 +24,9 @@ const Register = () => {
 						placeholder="아이디를 입력해주세요."
 						value={id}
 						changeValue={setId}
+						enterEventHandler={() => {
+							register(id, password, studentId, name);
+						}}
 					/>
 					<Textbox
 						inputBoxHint="비밀번호"
@@ -32,6 +35,9 @@ const Register = () => {
 						placeholder="비밀번호를 입력해주세요."
 						value={password}
 						changeValue={setPassword}
+						enterEventHandler={() => {
+							register(id, password, studentId, name);
+						}}
 					/>
 					<Textbox
 						inputBoxHint="학번"
@@ -39,6 +45,9 @@ const Register = () => {
 						placeholder="학번을 입력해주세요. (ex. 31008)"
 						value={studentId}
 						changeValue={setStudentId}
+						enterEventHandler={() => {
+							register(id, password, studentId, name);
+						}}
 					/>
 					<Textbox
 						inputBoxHint="이름"
@@ -47,6 +56,9 @@ const Register = () => {
 						placeholder="이름을 입력해주세요."
 						value={name}
 						changeValue={setName}
+						enterEventHandler={() => {
+							register(id, password, studentId, name);
+						}}
 					/>
 				</div>
 				<div
