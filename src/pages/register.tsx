@@ -21,6 +21,7 @@ const Register = () => {
 						inputBoxHint="아이디"
 						inputBoxType="text"
 						autoComplete="username"
+						placeholder="아이디를 입력해주세요."
 						value={id}
 						changeValue={setId}
 					/>
@@ -28,12 +29,14 @@ const Register = () => {
 						inputBoxHint="비밀번호"
 						inputBoxType="password"
 						autoComplete="new-password"
+						placeholder="비밀번호를 입력해주세요."
 						value={password}
 						changeValue={setPassword}
 					/>
 					<Textbox
 						inputBoxHint="학번"
 						inputBoxType="text"
+						placeholder="학번을 입력해주세요. (ex. 31008)"
 						value={studentId}
 						changeValue={setStudentId}
 					/>
@@ -41,6 +44,7 @@ const Register = () => {
 						inputBoxHint="이름"
 						inputBoxType="text"
 						autoComplete="name"
+						placeholder="이름을 입력해주세요."
 						value={name}
 						changeValue={setName}
 					/>

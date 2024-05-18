@@ -19,6 +19,7 @@ const Login = () => {
 						inputBoxHint="아이디"
 						inputBoxType="text"
 						autoComplete="username"
+						placeholder="아이디를 입력해주세요."
 						value={id}
 						changeValue={setId}
 					/>
@@ -26,6 +27,7 @@ const Login = () => {
 						inputBoxHint="비밀번호"
 						inputBoxType="password"
 						autoComplete="current-password"
+						placeholder="비밀번호를 입력해주세요."
 						value={password}
 						changeValue={setPassword}
 					/>
