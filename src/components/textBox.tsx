@@ -2,6 +2,7 @@ interface TextboxProps {
 	inputBoxType: string;
 	inputBoxHint: string;
 	value: string;
+	autoComplete?: string;
 	changeValue: (value: string) => void;
 }
 
@@ -9,6 +10,7 @@ export const Textbox = ({
 	inputBoxType,
 	inputBoxHint,
 	value,
+	autoComplete,
 	changeValue,
 }: TextboxProps) => (
 	<div className="flex justify-center items-center w-full h-fit">
@@ -19,6 +21,7 @@ export const Textbox = ({
 			<input
 				type={inputBoxType}
 				value={value}
+				autoComplete={autoComplete}
 				onChange={(e) => changeValue(e.target.value)}
 				className="border border-black h-8"
 			/>
