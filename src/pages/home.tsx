@@ -31,7 +31,7 @@ const Home = () => {
 					<img src={homeLogo} className="w-7 h-7" />
 					<span className=" text-2xl font-bold">MAKE Gate</span>
 				</div>
-				<div className="flex flex-row ml-auto mr-4 gap-x-2">
+				<div className="flex flex-row ml-auto mr-4 gap-x-3">
 					{isAdmin && (
 						<MdAdminPanelSettings
 							className="w-8 h-8 "
