@@ -1,11 +1,11 @@
 import { HomeFeature } from "../components/homeFeature";
-import { TitleBar } from "../components/titleBar";
 import { checkAdmin } from "../services/auth";
 import { useEffect, useState } from "react";
-import { LockStatusBox } from "../components/lockStatusBox";
 import { getLockStatus } from "../services/admin";
-import { HomeButton } from "../components/homeButton";
 import { useNavigate } from "react-router-dom";
+import { MdAdminPanelSettings } from "react-icons/md";
+import { BiLogOut } from "react-icons/bi";
+import homeLogo from "../assets/homeLogo.svg";
 
 const Home = () => {
 	if (!localStorage.getItem("code")) document.location.href = "/login";
@@ -25,43 +25,31 @@ const Home = () => {
 
 	return (
 		<div className="fixed w-full h-full bg-white">
-			<TitleBar title="메이커스페이스 출입관리" />
-			<LockStatusBox status={lockStatus} />
 			<div className="h-[3%]" />
-			<HomeFeature />
-			<div className="h-[5%]" />
-			<div className="h-[10%] ">
-				{isAdmin ? (
-					<div className="flex flex-row h-full">
-						<HomeButton
-							text="관리자 메뉴"
-							color="bg-gray-300"
-							func={() => {
-								return navigator("/admin");
-							}}
+			<div className="w-full flex flex-row">
+				<div className="flex flex-row pl-4 items-center gap-x-2">
+					<img src={homeLogo} className="w-7 h-7" />
+					<span className=" text-2xl font-bold">MAKE Gate</span>
+				</div>
+				<div className="flex flex-row ml-auto mr-4 gap-x-2">
+					{isAdmin && (
+						<MdAdminPanelSettings
+							className="w-8 h-8 "
+							onClick={() => navigator("/admin")}
 						/>
-						<HomeButton
-							text="로그아웃"
-							color="bg-gray-300"
-							func={() => {
-								localStorage.removeItem("code");
-								localStorage.removeItem("skip");
-								return navigator("/login");
-							}}
-						/>
-					</div>
-				) : (
-					<HomeButton
-						text="로그아웃"
-						color="bg-gray-300"
-						func={() => {
+					)}
+					<BiLogOut
+						className="w-8 h-8"
+						onClick={() => {
 							localStorage.removeItem("code");
 							localStorage.removeItem("skip");
 							return navigator("/login");
 						}}
 					/>
-				)}
+				</div>
 			</div>
+			<div className="h-[3%]" />
+			<HomeFeature status={lockStatus} />
 		</div>
 	);
 };
