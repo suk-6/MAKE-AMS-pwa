@@ -6,10 +6,6 @@ export interface AccessRequestViewProps {
 	id: string;
 }
 
-Intl.DateTimeFormat("kr", {
-	dateStyle: "medium",
-});
-
 export const AccessRequestView = ({
 	studentId,
 	name,

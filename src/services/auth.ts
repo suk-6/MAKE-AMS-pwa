@@ -94,3 +94,13 @@ export const checkQR = async () => {
 	}
 	return false;
 };
+
+export const getRecentAccess = async () => {
+	const code = localStorage.getItem("code");
+	const result = await fetch(`${API_BASE_URL}/auth/recent?code=${code}`).then(
+		(res) => res.json()
+	);
+
+	if (result.status !== true) return undefined;
+	return result.data;
+};
