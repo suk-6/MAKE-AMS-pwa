@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import homeLogo from "../assets/homeLogo.svg";
+import { RecentAccess } from "../components/recentAccess";
 
 const Home = () => {
 	if (!localStorage.getItem("code")) document.location.href = "/login";
@@ -50,6 +51,7 @@ const Home = () => {
 			</div>
 			<div className="h-[3%]" />
 			<HomeFeature status={lockStatus} />
+			<RecentAccess />
 		</div>
 	);
 };
