@@ -34,7 +34,7 @@ export const HomeFeature = ({ status }: lockStatusBoxProps) => {
 	switch (status) {
 		case DoorStatus.LOCKED:
 			boxClass = `${boxClass} bg-red1`;
-			boxText = "출입 제한";
+			boxText = "출입 제한 상태";
 			break;
 
 		case DoorStatus.RESTRICTED:
@@ -44,7 +44,7 @@ export const HomeFeature = ({ status }: lockStatusBoxProps) => {
 
 		case DoorStatus.UNLOCKED:
 			boxClass = `${boxClass} bg-blue1`;
-			boxText = "자유 출입";
+			boxText = "자유 출입 상태";
 			break;
 
 		default:
