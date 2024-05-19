@@ -55,7 +55,7 @@ export const HomeFeature = ({ status }: lockStatusBoxProps) => {
 
 	return (
 		<div className="w-full h-[60%] flex justify-center items-center">
-			<div className=" w-[20rem] h-[25rem] bg-gradient-24 from-gr1 to-gr2 rounded-3xl flex flex-col shadow-2xl items-center">
+			<div className=" w-[20rem] h-[25rem] bg-gradient-24 from-gr1 to-gr2 rounded-3xl flex flex-col shadow-2xl drop-shadow-2xl items-center">
 				<div className="w-full h-full flex items-center justify-center pt-4">
 					<div className=" w-56 h-56 bg-white rounded-2xl flex items-center justify-center">
 						<QRCode
