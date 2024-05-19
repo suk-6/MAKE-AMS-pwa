@@ -9,10 +9,6 @@ export interface AccessViewProps {
 	timestamp: number;
 }
 
-Intl.DateTimeFormat("kr", {
-	dateStyle: "medium",
-});
-
 export const AccessView = ({ studentId, name, timestamp }: AccessViewProps) => (
 	<div className="p-5 border-b border-gray-200">
 		<div className="text-sm text-gray-600">학번: {studentId}</div>
