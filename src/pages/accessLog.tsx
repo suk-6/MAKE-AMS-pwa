@@ -11,7 +11,7 @@ export const AccessLogPage = () => {
 	}, []);
 
 	return (
-		<div className=" overflow-y-scroll">
+		<div className=" overflow-scroll">
 			<TitleBar title="출입 기록" />
 			<ListView
 				items={accessLogs.map((log) => (
