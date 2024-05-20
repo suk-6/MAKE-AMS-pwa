@@ -60,7 +60,7 @@ export const HomeFeature = ({ status }: lockStatusBoxProps) => {
 					<div className=" w-56 h-56 bg-white rounded-2xl flex items-center justify-center">
 						<QRCode
 							className=" w-48 h-48"
-							value={`${localStorage.getItem("code")}@` || ""}
+							value={`(${localStorage.getItem("code")})` || ""}
 							size={256}
 							bgColor="#FFFFFF"
 							onClick={() => navigate("/qr")}
