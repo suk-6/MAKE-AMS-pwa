@@ -4,7 +4,7 @@ import { TitleBar } from "../titleBar";
 
 export const AdminFeature = () => {
 	return (
-		<div className="h-[30%]">
+		<div className="h-52">
 			<TitleBar title="관리자" />
 			<div className="grid grid-rows-2 h-full gap-y-3 pt-5">
 				<div className="grid grid-cols-3">
