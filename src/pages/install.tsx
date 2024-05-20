@@ -30,6 +30,10 @@ export const InstallPage = () => {
 				"kakaotalk://web/openExternal?url=" +
 				encodeURIComponent(window.location.toString());
 		}
+
+		return () => {
+			window.removeEventListener("beforeinstallprompt", () => {});
+		};
 	}, [userAgent]);
 
 	const installApp = () => {
