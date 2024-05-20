@@ -2,7 +2,7 @@ import { AdminFeature } from "../components/admin/adminFeature";
 
 export const AdminView = () => {
 	return (
-		<div className="w-full h-full">
+		<div className="w-full h-full fixed">
 			<AdminFeature />
 		</div>
 	);
