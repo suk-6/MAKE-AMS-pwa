@@ -14,7 +14,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
 	return (
-		<div className=" fixed w-full h-full">
+		<div className="w-full h-full">
 			<InstallPage />
 			<Routes>
 				<Route path="/" Component={Home} />

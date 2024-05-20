@@ -12,7 +12,9 @@ export const AccessLogPage = () => {
 
 	return (
 		<div>
-			<TitleBar title="출입 기록" />
+			<div className="fixed bg-white w-full">
+				<TitleBar title="출입 기록" />
+			</div>
 			<ListView
 				items={accessLogs.map((log) => (
 					<AccessView

@@ -6,7 +6,7 @@ export const AdminFeature = () => {
 	return (
 		<div className="h-[30%]">
 			<TitleBar title="관리자" />
-			<div className="grid grid-rows-2 h-full gap-y-3">
+			<div className="grid grid-rows-2 h-full gap-y-3 pt-5">
 				<div className="grid grid-cols-3">
 					<HomeButton
 						text="출입 제한"
