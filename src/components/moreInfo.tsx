@@ -15,7 +15,7 @@ export const MoreInfo = () => {
 		getRecentAccess().then((data) => {
 			setRecentAccess(data);
 		});
-	}, [recentAccess]);
+	}, []);
 
 	return (
 		<div className="w-full flex justify-center items-start">
