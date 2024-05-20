@@ -9,6 +9,11 @@
 
 * {
 	font-family: Pretendard, sans-serif;
+	user-select: none;
+}
+
+input {
+	user-select: all;
 }
 
 @media all and (display-mode: standalone) {
