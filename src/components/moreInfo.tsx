@@ -20,7 +20,7 @@ export const MoreInfo = () => {
 	return (
 		<div className="w-full flex justify-center items-start">
 			<div className=" flex flex-col gap-y-2 pt-10 w-[90%]">
-				<div className="flex flex-col text-gray-300">
+				<div className="flex flex-col text-gray-400">
 					<span>
 						{recentAccess === undefined
 							? "최근 출입 기록이 없습니다."
@@ -31,7 +31,7 @@ export const MoreInfo = () => {
 							  )}`}
 					</span>
 				</div>
-				<div className="w-full h-[0.1rem] bg-gray-200" />
+				<div className="w-full h-[0.1rem] bg-gray-300" />
 			</div>
 		</div>
 	);
