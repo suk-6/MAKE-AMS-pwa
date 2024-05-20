@@ -36,7 +36,13 @@
 
 		<meta
 			http-equiv="Content-Security-Policy"
-			content="default-src 'self' 'unsafe-inline' https://ams-api.dyhs.kr;"
+			content="
+			default-src 'self' 'unsafe-inline' https://ams-api.dyhs.kr;
+			img-src 'self' 'unsafe-inline' https://ams-api.dyhs.kr;
+			script-src 'self' 'unsafe-inline' https://ams-api.dyhs.kr https://va.vercel-scripts.com;
+			style-src 'self' 'unsafe-inline' https://ams-api.dyhs.kr https://cdnjs.cloudflare.com;
+			font-src 'self' 'unsafe-inline' https://ams-api.dyhs.kr https://cdnjs.cloudflare.com;
+			"
 		/>
 	</head>
 	<body>
