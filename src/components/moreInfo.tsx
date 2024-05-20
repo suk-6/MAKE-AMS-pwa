@@ -31,7 +31,7 @@ export const MoreInfo = () => {
 							  )}`}
 					</span>
 				</div>
-				<div className="w-full h-1 bg-gray-200" />
+				<div className="w-full h-[0.1rem] bg-gray-200" />
 			</div>
 		</div>
 	);
