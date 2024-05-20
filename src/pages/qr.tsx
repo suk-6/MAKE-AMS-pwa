@@ -11,7 +11,7 @@ export const QRView = () => {
 		>
 			<QRCode
 				className=" w-[90%] h-[90%]"
-				value={`${localStorage.getItem("code")}\n` || ""}
+				value={`${localStorage.getItem("code")}\r\n` || ""}
 				size={512}
 			/>
 		</div>
