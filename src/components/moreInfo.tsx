@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { getRecentAccess } from "../services/auth";
 
-export const RecentAccess = () => {
-	const [recentAccess, setRecentAccess] = useState(undefined);
+export const MoreInfo = () => {
+	const [recentAccess, setRecentAccess] = useState<
+		{ username: string; time: number } | undefined
+	>(undefined);
 
 	const timeFormat = new Intl.DateTimeFormat("ko", {
 		dateStyle: "medium",
@@ -18,12 +20,14 @@ export const RecentAccess = () => {
 	return (
 		<div className="w-full flex justify-center items-start">
 			<div className=" flex flex-col gap-y-2 pt-10 w-[90%]">
-				<div className="flex flex-row text-gray-300">
+				<div className="flex flex-col text-gray-300">
 					<span>
 						{recentAccess === undefined
 							? "최근 출입 기록이 없습니다."
-							: `최근 출입: ${timeFormat(
-									new Date(recentAccess)
+							: `${
+									recentAccess.username
+							  }님 최근 출입: ${timeFormat(
+									new Date(recentAccess.time)
 							  )}`}
 					</span>
 				</div>
