@@ -29,7 +29,7 @@ const Home = () => {
 			<div className="h-[3%]" />
 			<div className="w-full flex flex-row">
 				<div className="flex flex-row pl-4 items-center gap-x-2">
-					<img src={homeLogo} className="w-7 h-7" />
+					<img src={homeLogo} alt="site logo" className="w-7 h-7" />
 					<span className=" text-2xl font-bold">MAKE Gate</span>
 				</div>
 				<div className="flex flex-row ml-auto mr-4 gap-x-3">
