@@ -16,7 +16,7 @@ export const AccessRequestPage = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className=" overflow-y-scroll">
 			<TitleBar title="가입 승인" />
 			<ListView
 				items={accessRequests.map((log) => (
