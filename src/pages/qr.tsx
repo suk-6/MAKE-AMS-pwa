@@ -5,10 +5,13 @@ export const QRView = () => {
 	const navigator = useNavigate();
 
 	return (
-		<div className="w-full h-full flex justify-center items-center" onClick={() => navigator('/')}>
+		<div
+			className="w-full h-full flex justify-center items-center"
+			onClick={() => navigator("/")}
+		>
 			<QRCode
 				className=" w-[90%] h-[90%]"
-				value={localStorage.getItem("code") || ""}
+				value={`${localStorage.getItem("code")}\n` || ""}
 				size={512}
 			/>
 		</div>
