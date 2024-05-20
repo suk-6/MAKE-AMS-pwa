@@ -17,7 +17,9 @@ export const AccessRequestPage = () => {
 
 	return (
 		<div>
-			<TitleBar title="가입 승인" />
+			<div className="fixed bg-white w-full">
+				<TitleBar title="가입 승인" />
+			</div>
 			<ListView
 				items={accessRequests.map((log) => (
 					<AccessRequestView
