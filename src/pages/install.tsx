@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { TitleBar } from "../components/titleBar";
+import iosInstallGuide from "../assets/ios.webp";
 
 interface BeforeInstallPromptEvent extends Event {
 	readonly platforms: Array<string>;
@@ -85,7 +86,7 @@ export const InstallPage = () => {
 				<span className="flex items-center justify-center mb-3">
 					아이폰 사용자는 아래 지시를 따라주세요.
 				</span>
-				<img src="ios.webp" alt="" />
+				<img src={iosInstallGuide} alt="" />
 			</div>
 			<div className=" w-full flex justify-center items-center py-5">
 				<div className="w-[95%] border-[1px] border-black" />
