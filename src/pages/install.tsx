@@ -66,11 +66,11 @@ export const InstallPage = () => {
 			className={
 				skiped === true
 					? "hidden"
-					: " installApp w-full h-full bg-white"
+					: " installApp w-full h-full bg-white fixed top-0 left-0 z-50 overflow-y-auto overflow-x-hidden"
 			}
 		>
 			<TitleBar title="앱 설치 안내" />
-			<div>
+			<div className="pt-4">
 				<span className="flex items-center justify-center mb-3">
 					안드로이드는 아래 버튼을 터치하여 앱을 설치해주세요.
 				</span>
