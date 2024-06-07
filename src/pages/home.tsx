@@ -50,7 +50,7 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="h-[3%]" />
-			<HomeFeature status={lockStatus} />
+			<HomeFeature status={lockStatus} isAdmin={isAdmin} />
 			<MoreInfo />
 		</div>
 	);
