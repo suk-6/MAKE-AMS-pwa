@@ -61,7 +61,9 @@ export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 					<div className=" w-56 h-56 bg-white rounded-2xl flex items-center justify-center">
 						<QRCode
 							className={` w-48 h-48 ${
-								DoorStatus.LOCKED && !isAdmin && "blur-lg"
+								status === DoorStatus.LOCKED &&
+								!isAdmin &&
+								"blur-lg"
 							}`}
 							value={`(${localStorage.getItem("code")})` || ""}
 							size={256}
