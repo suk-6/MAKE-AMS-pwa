@@ -6,9 +6,10 @@ import { DoorStatus } from "../misc/doorStatus";
 
 interface lockStatusBoxProps {
 	status: DoorStatus | undefined;
+	isAdmin: boolean;
 }
 
-export const HomeFeature = ({ status }: lockStatusBoxProps) => {
+export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -59,7 +60,9 @@ export const HomeFeature = ({ status }: lockStatusBoxProps) => {
 				<div className="w-full h-full flex items-center justify-center pt-4">
 					<div className=" w-56 h-56 bg-white rounded-2xl flex items-center justify-center">
 						<QRCode
-							className=" w-48 h-48"
+							className={` w-48 h-48 ${
+								DoorStatus.LOCKED && !isAdmin && "blur-lg"
+							}`}
 							value={`(${localStorage.getItem("code")})` || ""}
 							size={256}
 							bgColor="#FFFFFF"
