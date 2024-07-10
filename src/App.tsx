@@ -6,7 +6,6 @@ import Register from "./pages/register";
 import { Route, Routes } from "react-router-dom";
 import { AccessLogPage } from "./pages/accessLog";
 import { AccessRequestPage } from "./pages/accessRequest";
-import { QRView } from "./pages/qr";
 import { AdminView } from "./pages/admin";
 import { InstallPage } from "./pages/install";
 
@@ -18,7 +17,6 @@ const App = () => {
 			<InstallPage />
 			<Routes>
 				<Route path="/" Component={Home} />
-				<Route path="/qr" Component={QRView} />
 				<Route path="/admin" Component={AdminView} />
 				<Route path="/login" Component={Login} />
 				<Route path="/register" Component={Register} />
