@@ -68,7 +68,6 @@ export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 							value={`(${localStorage.getItem("code")})` || ""}
 							size={256}
 							bgColor="#FFFFFF"
-							onClick={() => navigate("/qr")}
 						/>
 					</div>
 				</div>
