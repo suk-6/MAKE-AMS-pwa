@@ -56,11 +56,11 @@ export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 
 	return (
 		<div className="w-full h-[60%] flex justify-center items-center">
-			<div className=" w-[20rem] h-[25rem] bg-gradient-24 from-gr1 to-gr2 rounded-3xl flex flex-col shadow-2xl drop-shadow-2xl items-center">
+			<div className=" px-2 py-5 my-5 bg-gradient-24 from-gr1 to-gr2 shadow-2xl drop-shadow-2xl rounded-3xl flex flex-col items-center gap-6">
 				<div className="w-full h-full flex items-center justify-center pt-4">
-					<div className=" w-56 h-56 bg-white rounded-2xl flex items-center justify-center">
+					<div className=" w-[70%] h-[70%] p-4 bg-white rounded-2xl flex items-center justify-center">
 						<QRCode
-							className={` w-48 h-48 ${
+							className={` w-full h-full ${
 								status === DoorStatus.LOCKED &&
 								!isAdmin &&
 								"blur-lg"
@@ -71,7 +71,7 @@ export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 						/>
 					</div>
 				</div>
-				<div className="w-48 h-20 bg-black1 mb-16 mt-auto rounded-xl shadow-2xl text-white flex flex-row justify-start items-center">
+				<div className="w-48 h-14 bg-black1 mb-8 mt-auto rounded-xl shadow-2xl text-white flex flex-row justify-start items-center">
 					<div className="pl-3 w-fit">
 						<div className={boxClass} />
 					</div>
