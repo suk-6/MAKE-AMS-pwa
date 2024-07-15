@@ -9,9 +9,12 @@ export const login = async (id: string, password: string) => {
 		return (document.location.href = "/");
 	}
 
+	const trimedId = id.trim();
+	const trimedPassword = password.trim();
+
 	const result = await fetch(`${API_BASE_URL}/auth/login`, {
 		method: "POST",
-		body: JSON.stringify({ id, password }),
+		body: JSON.stringify({ id: trimedId, password: trimedPassword }),
 		headers: {
 			"Content-Type": "application/json",
 		},
@@ -33,9 +36,30 @@ export const register = async (
 	if (id === "" || password === "")
 		return alert("아이디와 비밀번호를 입력해주세요");
 
+	const trimedId = id.trim();
+	const trimedPassword = password.trim();
+	const trimedStudentId = studentId.trim();
+	const trimedName = name.trim();
+
+	// 공백 확인
+	if (
+		trimedId.includes(" ") ||
+		trimedPassword.includes(" ") ||
+		trimedStudentId.includes(" ") ||
+		trimedName.includes(" ")
+	)
+		return alert(
+			"아이디, 비밀번호, 학번, 이름에 공백이 포함될 수 없습니다."
+		);
+
 	const result = await fetch(`${API_BASE_URL}/auth/register`, {
 		method: "POST",
-		body: JSON.stringify({ id, password, name, studentId }),
+		body: JSON.stringify({
+			id: trimedId,
+			password: trimedPassword,
+			name: trimedName,
+			studentId: trimedPassword,
+		}),
 		headers: {
 			"Content-Type": "application/json",
 		},
