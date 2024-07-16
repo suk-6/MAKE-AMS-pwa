@@ -57,8 +57,8 @@ export const register = async (
 		body: JSON.stringify({
 			id: trimedId,
 			password: trimedPassword,
+			studentId: trimedStudentId,
 			name: trimedName,
-			studentId: trimedPassword,
 		}),
 		headers: {
 			"Content-Type": "application/json",
