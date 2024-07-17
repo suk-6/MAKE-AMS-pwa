@@ -3,7 +3,7 @@ import { checkAdmin } from "../services/auth";
 import { useEffect, useState } from "react";
 import { getLockStatus } from "../services/admin";
 import { useNavigate } from "react-router-dom";
-import { MdAdminPanelSettings } from "react-icons/md";
+import { MdAdminPanelSettings, MdRefresh } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import homeLogo from "../assets/homeLogo.svg";
 import { MoreInfo } from "../components/moreInfo";
@@ -39,6 +39,10 @@ const Home = () => {
 							onClick={() => navigator("/admin")}
 						/>
 					)}
+					<MdRefresh
+						className="w-8 h-8"
+						onClick={() => window.location.reload()}
+					/>
 					<BiLogOut
 						className="w-8 h-8"
 						onClick={() => {
