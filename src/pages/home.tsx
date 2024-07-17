@@ -37,12 +37,12 @@ const Home = () => {
 					{isAdmin && (
 						<MdAdminPanelSettings
 							className="w-7 h-7 "
-							onClick={() => setRefresh(!refresh)}
+							onClick={() => navigator("/admin")}
 						/>
 					)}
 					<MdRefresh
 						className="w-7 h-7"
-						onClick={() => window.location.reload()}
+						onClick={() => setRefresh(!refresh)}
 					/>
 					<BiLogOut
 						className="w-7 h-7"
