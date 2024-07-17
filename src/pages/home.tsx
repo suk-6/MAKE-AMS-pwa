@@ -10,7 +10,6 @@ import { MoreInfo } from "../components/moreInfo";
 
 const Home = () => {
 	if (!localStorage.getItem("code")) document.location.href = "/login";
-	const [refresh, setRefresh] = useState<boolean>(false);
 	const [isAdmin, setIsAdmin] = useState(false);
 	const [lockStatus, setLockStatus] = useState(undefined);
 	const navigator = useNavigate();
@@ -23,7 +22,7 @@ const Home = () => {
 		getLockStatus().then((status) => {
 			setLockStatus(status.status);
 		});
-	}, [refresh]);
+	}, []);
 
 	return (
 		<div className="fixed w-full h-full bg-white">
@@ -42,7 +41,7 @@ const Home = () => {
 					)}
 					<MdRefresh
 						className="w-7 h-7"
-						onClick={() => setRefresh(!refresh)}
+						onClick={() => window.location.reload()}
 					/>
 					<BiLogOut
 						className="w-7 h-7"
