@@ -46,9 +46,11 @@ const Home = () => {
 					<BiLogOut
 						className="w-8 h-8"
 						onClick={() => {
-							localStorage.removeItem("code");
-							localStorage.removeItem("skip");
-							return navigator("/login");
+							if (confirm("로그아웃 하시겠습니까?")) {
+								localStorage.removeItem("code");
+								localStorage.removeItem("skip");
+								return navigator("/login");
+							}
 						}}
 					/>
 				</div>
