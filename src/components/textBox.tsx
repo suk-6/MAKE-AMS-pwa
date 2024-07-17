@@ -37,6 +37,7 @@ export const Textbox = ({
 					}}
 					onChange={(e) => changeValue(e.target.value)}
 					className=" border-0 border-b-2 w-full h-full text-black text-base font-normal font-['Pretendard'] focus:outline-none rounded-none"
+					style={{ WebkitUserSelect: "none" }}
 				/>
 			</div>
 		</div>
