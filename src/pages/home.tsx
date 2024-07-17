@@ -10,6 +10,7 @@ import { MoreInfo } from "../components/moreInfo";
 
 const Home = () => {
 	if (!localStorage.getItem("code")) document.location.href = "/login";
+	const [refresh, setRefresh] = useState<boolean>(false);
 	const [isAdmin, setIsAdmin] = useState(false);
 	const [lockStatus, setLockStatus] = useState(undefined);
 	const navigator = useNavigate();
@@ -22,7 +23,7 @@ const Home = () => {
 		getLockStatus().then((status) => {
 			setLockStatus(status.status);
 		});
-	}, []);
+	}, [refresh]);
 
 	return (
 		<div className="fixed w-full h-full bg-white">
@@ -30,21 +31,21 @@ const Home = () => {
 			<div className="w-full flex flex-row">
 				<div className="flex flex-row pl-4 items-center gap-x-2">
 					<img src={homeLogo} alt="site logo" className="w-7 h-7" />
-					<span className=" text-2xl font-bold">MAKE Gate</span>
+					<span className=" text-2xl font-bold">MAKE@AMS</span>
 				</div>
 				<div className="flex flex-row ml-auto mr-4 gap-x-3">
 					{isAdmin && (
 						<MdAdminPanelSettings
-							className="w-8 h-8 "
-							onClick={() => navigator("/admin")}
+							className="w-7 h-7 "
+							onClick={() => setRefresh(!refresh)}
 						/>
 					)}
 					<MdRefresh
-						className="w-8 h-8"
+						className="w-7 h-7"
 						onClick={() => window.location.reload()}
 					/>
 					<BiLogOut
-						className="w-8 h-8"
+						className="w-7 h-7"
 						onClick={() => {
 							if (confirm("로그아웃 하시겠습니까?")) {
 								localStorage.removeItem("code");
