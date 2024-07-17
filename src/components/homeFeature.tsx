@@ -58,13 +58,15 @@ export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 		<div className="w-full h-[60%] flex justify-center items-center">
 			<div className=" px-2 py-5 my-5 bg-gradient-24 from-gr1 to-gr2 shadow-2xl drop-shadow-2xl rounded-3xl flex flex-col items-center gap-6">
 				<div className="w-full h-full flex items-center justify-center pt-4">
-					<div className=" w-[70%] h-[70%] p-4 bg-white rounded-2xl flex items-center justify-center">
+					<div
+						className={` w-[70%] h-[70%] p-4 bg-white rounded-2xl flex items-center justify-center ${
+							status === DoorStatus.LOCKED &&
+							!isAdmin &&
+							"blur-md opacity-75"
+						}`}
+					>
 						<QRCode
-							className={` w-full h-full ${
-								status === DoorStatus.LOCKED &&
-								!isAdmin &&
-								"blur-lg"
-							}`}
+							className={" w-full h-full "}
 							value={`(${localStorage.getItem("code")})` || ""}
 							size={256}
 							bgColor="#FFFFFF"
