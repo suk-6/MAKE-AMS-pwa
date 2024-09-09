@@ -12,13 +12,11 @@ interface lockStatusBoxProps {
 export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 	const navigate = useNavigate();
 
-	useEffect(() => {
+	const update = () => {
 		try {
 			checkQR().then((res) => {
 				if (!res) {
-					if (
-						confirm("유효하지 않은 QR입니다. 다시 로그인해주세요.")
-					) {
+					if (confirm("유효하지 않은 QR입니다. 다시 로그인해주세요.")) {
 						localStorage.removeItem("code");
 						navigate("/login");
 					}
@@ -27,6 +25,36 @@ export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 		} catch (e) {
 			return alert("오류가 발생했습니다. 다시 로그인해주세요.");
 		}
+	};
+
+	useEffect(() => {
+		update();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	useEffect(() => {
+		const handleVisibilityChange = () => {
+			if (!document.hidden) {
+				try {
+					checkQR().then((res) => {
+						if (!res) {
+							if (confirm("유효하지 않은 QR입니다. 다시 로그인해주세요.")) {
+								localStorage.removeItem("code");
+								navigate("/login");
+							}
+						}
+					});
+				} catch (e) {
+					return alert("오류가 발생했습니다. 다시 로그인해주세요.");
+				}
+			}
+		};
+
+		document.addEventListener("visibilitychange", handleVisibilityChange);
+
+		return () => {
+			document.removeEventListener("visibilitychange", handleVisibilityChange);
+		};
 	}, [navigate]);
 
 	let boxClass = "w-5 h-5 rounded-full";
@@ -60,9 +88,7 @@ export const HomeFeature = ({ status, isAdmin }: lockStatusBoxProps) => {
 				<div className="w-full h-full flex items-center justify-center pt-4">
 					<div
 						className={` w-[70%] h-[70%] p-4 bg-white rounded-2xl flex items-center justify-center ${
-							status === DoorStatus.LOCKED &&
-							!isAdmin &&
-							"blur-md opacity-75"
+							status === DoorStatus.LOCKED && !isAdmin && "blur-md opacity-75"
 						}`}
 					>
 						<QRCode

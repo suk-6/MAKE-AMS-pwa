@@ -14,7 +14,7 @@ const Home = () => {
 	const [lockStatus, setLockStatus] = useState(undefined);
 	const navigator = useNavigate();
 
-	useEffect(() => {
+	const update = () => {
 		checkAdmin().then((result) => {
 			setIsAdmin(result);
 		});
@@ -22,6 +22,22 @@ const Home = () => {
 		getLockStatus().then((status) => {
 			setLockStatus(status.status);
 		});
+	};
+
+	useEffect(() => {
+		update();
+	}, []);
+
+	useEffect(() => {
+		const handleVisibilityChange = () => {
+			if (!document.hidden) update();
+		};
+
+		document.addEventListener("visibilitychange", handleVisibilityChange);
+
+		return () => {
+			document.removeEventListener("visibilitychange", handleVisibilityChange);
+		};
 	}, []);
 
 	return (
