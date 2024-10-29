@@ -80,22 +80,21 @@ export const checkAdmin = async () => {
 	return true;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const regenerateQR = async () => {
-	const code = localStorage.getItem("code");
-	const result = await fetch(
-		`${API_BASE_URL}/auth/regenerate?code=${code}`,
-	).then((res) => res.json());
+// const regenerateQR = async () => {
+// 	const code = localStorage.getItem("code");
+// 	const result = await fetch(
+// 		`${API_BASE_URL}/auth/regenerate?code=${code}`,
+// 	).then((res) => res.json());
 
-	if (result.status !== true) {
-		alert("QR 코드 갱신에 오류가 발생했습니다.");
-		return false;
-	}
+// 	if (result.status !== true) {
+// 		alert("QR 코드 갱신에 오류가 발생했습니다.");
+// 		return false;
+// 	}
 
-	localStorage.setItem("code", result.code);
-	localStorage.setItem("renewalDate", new Date().getTime().toString());
-	return true;
-};
+// 	localStorage.setItem("code", result.code);
+// 	localStorage.setItem("renewalDate", new Date().getTime().toString());
+// 	return true;
+// };
 
 export const checkQR = async () => {
 	const code = localStorage.getItem("code");
