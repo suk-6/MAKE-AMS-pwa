@@ -31,7 +31,7 @@ export const register = async (
 	id: string,
 	password: string,
 	studentId: string,
-	name: string
+	name: string,
 ) => {
 	if (id === "" || password === "")
 		return alert("아이디와 비밀번호를 입력해주세요");
@@ -48,9 +48,7 @@ export const register = async (
 		trimedStudentId.includes(" ") ||
 		trimedName.includes(" ")
 	)
-		return alert(
-			"아이디, 비밀번호, 학번, 이름에 공백이 포함될 수 없습니다."
-		);
+		return alert("아이디, 비밀번호, 학번, 이름에 공백이 포함될 수 없습니다.");
 
 	const result = await fetch(`${API_BASE_URL}/auth/register`, {
 		method: "POST",
@@ -75,7 +73,7 @@ export const checkAdmin = async () => {
 	if (code === "test") return true;
 
 	const result = await fetch(`${API_BASE_URL}/auth/admin?code=${code}`).then(
-		(res) => res.json()
+		(res) => res.json(),
 	);
 
 	if (result.status !== true) return false;
@@ -85,7 +83,7 @@ export const checkAdmin = async () => {
 const regenerateQR = async () => {
 	const code = localStorage.getItem("code");
 	const result = await fetch(
-		`${API_BASE_URL}/auth/regenerate?code=${code}`
+		`${API_BASE_URL}/auth/regenerate?code=${code}`,
 	).then((res) => res.json());
 
 	if (result.status !== true) {
@@ -101,17 +99,14 @@ const regenerateQR = async () => {
 export const checkQR = async () => {
 	const code = localStorage.getItem("code");
 	const result = await fetch(`${API_BASE_URL}/auth/check?code=${code}`).then(
-		(res) => res.json()
+		(res) => res.json(),
 	);
 
 	if (result.status === true) {
 		const now = new Date().getTime();
 		const renewalDate = localStorage.getItem("renewalDate");
 
-		if (
-			renewalDate === null ||
-			now - Number(renewalDate) > 1000 * 60 * 60 * 24
-		)
+		if (renewalDate === null || now - Number(renewalDate) > 1000 * 60 * 60 * 24)
 			return regenerateQR();
 
 		return true;
@@ -122,7 +117,7 @@ export const checkQR = async () => {
 export const getRecentAccess = async () => {
 	const code = localStorage.getItem("code");
 	const result = await fetch(`${API_BASE_URL}/auth/recent?code=${code}`).then(
-		(res) => res.json()
+		(res) => res.json(),
 	);
 
 	if (result.status !== true) return undefined;
