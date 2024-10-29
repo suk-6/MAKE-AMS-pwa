@@ -80,6 +80,7 @@ export const checkAdmin = async () => {
 	return true;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const regenerateQR = async () => {
 	const code = localStorage.getItem("code");
 	const result = await fetch(
