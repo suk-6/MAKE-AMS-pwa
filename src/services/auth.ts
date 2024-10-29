@@ -102,16 +102,21 @@ export const checkQR = async () => {
 		(res) => res.json(),
 	);
 
-	if (result.status === true) {
-		const now = new Date().getTime();
-		const renewalDate = localStorage.getItem("renewalDate");
+	return result.status;
 
-		if (renewalDate === null || now - Number(renewalDate) > 1000 * 60 * 60 * 24)
-			return regenerateQR();
+	// if (result.status === true) {
+	// 	const now = new Date().getTime();
+	// 	const renewalDate = localStorage.getItem("renewalDate");
 
-		return true;
-	}
-	return false;
+	// 	if (
+	// 		renewalDate === null ||
+	// 		now - Number(renewalDate) > 1000 * 60 * 60 * 24
+	// 	)
+	// 		return regenerateQR();
+
+	// 	return true;
+	// }
+	// return false;
 };
 
 export const getRecentAccess = async () => {
